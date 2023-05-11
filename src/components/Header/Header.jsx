@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.css'
 import Logo from './Logo/Logo';
 import NavPanel from './NavPanel/NavPanel';
+import OutButton from './OutButton/OutButton';
 
 
 const Header = (props) => {
@@ -9,7 +10,7 @@ const Header = (props) => {
         <header>
             <Logo />
             <NavPanel />
-            <button><img src="../assets/svg/signout-icon.svg" /></button>
+            <OutButton />
         </header>
 
     )

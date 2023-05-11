@@ -1,0 +1,161 @@
+#chat-container {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 0px;
+    margin-bottom: 88px;
+    gap: 20px;
+
+    width: 412px;
+
+    /* Body / 16px regular */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: 0.24px;
+
+    /* Gray / 700 */
+
+    color: #373745;
+}
+
+.msgs-container {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 12px;
+}
+
+.msg-container {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+
+    max-width: 352px;
+
+    /* Gray / White */
+
+    background: #FFFFFF;
+    /* Elevation/Lv1 */
+
+    box-shadow: 0px 2px 6px rgba(44, 57, 121, 0.1);
+}
+
+.msg-container.other {
+    align-self: flex-start;
+    border-radius: 16px 16px 16px 0px;
+}
+
+.msg-container.me {
+    align-self: flex-end;
+    border-radius: 16px 16px 0px 16px;
+}
+
+.msg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: -webkit-fill-available;
+}
+
+.subject-name {
+    /* Body / 14px medium */
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    letter-spacing: 0.25px;
+}
+
+.subject-name.x {
+    color: #60C2AA;
+}
+.subject-name.zero {
+    color: #E38BAC;
+}
+
+.msg-header .time {
+    /* Body / 14px regular */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.25px;
+
+    /* Gray / 400 */
+
+    color: #898993;
+}
+
+.msg-interactive-elements {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    gap: 12px;
+    width: -webkit-fill-available;
+}
+
+.msg-interactive-elements button {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+
+    width: 48px;
+    height: 48px;
+
+    background: #60C2AA;
+    border-radius: 12px;
+}
+
+.msg-interactive-elements textarea {
+    resize: none;
+    width: -webkit-fill-available;
+    height: 48px;
+    max-height: max-content;
+    overflow: hidden;
+    /* Textfield */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    padding: 12px 20px;
+    gap: 8px;
+
+    /* Gray / White */
+
+    background: #FFFFFF;
+    /* Gray / 100 */
+
+    border: 1px solid #DCDCDF;
+    border-radius: 12px;
+
+
+    /* Body / 16px regular */
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.24px;
+
+    color: #373745;
+}

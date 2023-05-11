@@ -1,0 +1,91 @@
+#game-container {
+    width: 663px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-time {
+    width: fit-content;
+    padding: 24px;
+
+    background: #EDEDED;
+    border-radius: 12px;
+
+    /* Headers / Jumbo – black */
+    font-style: normal;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 40px;
+    /* identical to box height */
+
+    letter-spacing: 0.25px;
+
+    /* Gray / 700 */
+
+    color: #373745;
+}
+
+#game-board {
+    width: 663px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 4px;
+}
+
+#game-board .cell {
+    width: 218.33px;
+    height: 218.33px;
+
+    /* Gray / White */
+
+    background: #FFFFFF;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-step {
+    width: 400px;
+    padding: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Gray / 700
+
+    Text
+    */
+    background: #373745;
+    /* Elevation / Lv2 */
+
+    box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+    border-radius: 12px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: 0.15px;
+
+    /* Gray / White */
+
+    color: #FFFFFF;
+}
+
+
+.cell {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

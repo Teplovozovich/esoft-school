@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+  
+    background: rgba(246, 246, 246, 1);
+  }
+
+#main-container {
+    margin-top: 64px;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+}

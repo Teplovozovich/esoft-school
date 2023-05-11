@@ -1,0 +1,107 @@
+#subject-list {
+    /* Auto layout */
+
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+
+    width: 500px;
+
+    /* Gray / White */
+
+    background: #FFFFFF;
+    /* Elevation / Lv2 */
+
+    box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+    border-radius: 20px;
+}
+
+#subject-list h1 {
+    /* Headers / H1 – bold */
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+
+    /* Gray / 700 */
+
+    color: #373745;
+    margin: 0;
+}
+
+.container {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.subject-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#subject-list .subject-name {
+    /* Headers / H2 – regular */
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: 0.15px;
+
+    /* Gray / 700 */
+
+    color: #373745;
+}
+
+#subject-list .subject-percent {
+    /* Body / 14px regular */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.25px;
+
+    /* Gray / 400 */
+
+    color: #898993;
+}
+
+#subject-list .subject-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#subject-list .subject-info {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+}
+
