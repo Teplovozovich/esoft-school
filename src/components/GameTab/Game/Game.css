@@ -81,6 +81,10 @@
     color: #FFFFFF;
 }
 
+#imgCurrentPlayer {
+    height: 30px;
+    width: 30px;
+}
 
 .cell {
     -khtml-user-select: none;
