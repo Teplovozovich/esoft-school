@@ -3,6 +3,8 @@ import './GameTab.css'
 import Players from './Players/Players';
 import Game from './Game/Game';
 import Chat from './Chat/Chat';
+import Button from '../Common/Button/Button';
+import ModalWindow from './ModalWindow/ModalWindow';
 
 
 const GameTab = (props) => {

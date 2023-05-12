@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './Game.css';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 const Game = (props) => {
     const [turn, setTurn] = useState('X');
     const [board, setBoard] = useState(Array(9).fill(''));
     const [winner, setWinner] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [playerX, setPlayerX] = useState({
+        name: 'Плюшкина',
+        surname: 'Екатерина'
+    });
+
+    const [playerO, setPlayerO] = useState({
+        name: 'Пупкин',
+        surname: 'Владелен'
+    });
+
+    const [resetBoard, setResetBoard] = useState(false);
+
 
     useEffect(() => {
         checkWinner();
@@ -40,9 +54,77 @@ const Game = (props) => {
 
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 setWinner(board[a]);
-                break;
+                setShowModal(true);
+                return;
             }
         }
+
+        if (!board.includes('')) {
+            setWinner('Ничья');
+            setShowModal(true);
+            return;
+        }
+    }
+
+
+    function handleResetBoard() {
+        setTurn(winner === 'X' ? 'O' : 'X'); // Start with the opposite player if there is a winner
+        setBoard(Array(9).fill(''));
+        setWinner(null);
+        setPlayerX(prevState => ({
+            ...prevState,
+            name: prevState.surname,
+            surname: prevState.name
+        }));
+        setPlayerO(prevState => ({
+            ...prevState,
+            name: prevState.surname,
+            surname: prevState.name
+        }));
+    }
+
+    let modalWindow = null;
+    let gameStep = null;
+
+    if (winner) {
+        let textPageTitle = '';
+        if (winner === 'X') {
+            textPageTitle = `${playerO.name} ${playerO.surname} победил!`;
+        } else if (winner === 'O') {
+            textPageTitle = `${playerX.name} ${playerX.surname} Победила!`;
+        } else {
+            textPageTitle = `Ничья!`;
+        }
+
+        modalWindow = (
+            <ModalWindow secondButtonClickHandler={() => { console.log("aboba"); }} onClick={handleResetBoard} textPageTitle={textPageTitle} />
+        );
+
+        gameStep = (
+            <div id="game-step">
+                <p>Ходит</p>
+                &nbsp;
+                <img
+                    id="imgCurrentPlayer"
+                    src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'}
+                />
+                &nbsp;
+                <p>{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
+            </div>
+        );
+    } else {
+        gameStep = (
+            <div id="game-step">
+                <p>Ходит</p>
+                &nbsp;
+                <img
+                    id="imgCurrentPlayer"
+                    src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'}
+                />
+                &nbsp;
+                <p>{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
+            </div>
+        );
     }
 
     return (
@@ -58,24 +140,19 @@ const Game = (props) => {
                     >
                         <img
                             id={`theImg${index + 1}`}
-                            src={cell === 'X' ? '../assets/svg/xxl-x.svg' : (cell === 'O' ? '../assets/svg/xxl-zero.svg' : '')}
+                            src={
+                                cell === 'X'
+                                    ? '../assets/svg/xxl-x.svg'
+                                    : cell === 'O'
+                                        ? '../assets/svg/xxl-zero.svg'
+                                        : ''
+                            }
                         />
                     </div>
                 ))}
             </div>
-            <div id="game-step">
-                {winner ? (
-                    <>
-                        <p>Победитель: {winner}</p>
-                        <button onClick={() => window.location.reload()}>Начать заново</button>
-                    </>
-                ) : (
-                    <>
-                        <p>Ходит </p>
-                        <img id="imgCurrentPlayer" src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'} />
-                    </>
-                )}
-            </div>
+            {modalWindow}
+            {gameStep}
         </div>
     );
 };

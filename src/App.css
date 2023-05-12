@@ -3,12 +3,11 @@
   font-style: normal;
   font-weight: 400;
   margin: 0;
+  border: none;
+
 }
 
 .App {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
   margin: 0;
   padding: 0;
   
