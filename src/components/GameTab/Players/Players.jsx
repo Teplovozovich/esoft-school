@@ -1,8 +1,7 @@
 import React from 'react'
 import './Players.css'
 import PlayersItems from '../PlayersItems/PlayersItems';
-import PageTitle from '../../Common/PageTitle/PageTitle';
-
+import PageTitle from '../../common/PageTitle/PageTitle';
 
 const Players = (props) => {
     return (
