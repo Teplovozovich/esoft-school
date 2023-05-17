@@ -44,6 +44,8 @@ body {
 .blocks {
     display: flex;
     flex-wrap: nowrap;
+    padding-top: 24px;
+    font-weight: 600;
     justify-content: flex-start;
 
     /*--border: 1px solid aqua;*/
@@ -86,14 +88,7 @@ body {
     width: 440px; 
 }
 
-.percent_of_win {
-    width: 132px;
-}
 
-.text_wins {
-    color: #69B849;
-}
 
-.text_losses {
-    color: #E93E3E;
-}
+
+

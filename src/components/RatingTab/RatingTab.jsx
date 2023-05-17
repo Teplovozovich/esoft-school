@@ -1,33 +1,14 @@
 import React from 'react';
-import PageTitle from '../common/PageTitle/PageTitle';
+import PageTitle from '../Common/PageTitle/PageTitle';
 import s from './RatingTab.module.css'
 import TableTextBlockName from './TableTextBlockName/TableTextBlockName';
-
-
-
-function WinsNumText(props) {
-    return (
-        <div className={`${s.block_text} ${s.text_wins}`}>
-            {props.sumWins}
-        </div>
-    )
-}
-
-function LossesNumText(props) {
-    return (
-        <div className={`${s.block_text} ${s.text_losses}`}>{props.sumLosses}</div>
-
-    )
-}
-
-function AllGameText(props) {
-    return (
-        <div className={s.block_text}>{props.}</div>
-    )
-}
+import WinsNumText from './WinsNumText/WinsNumText';
+import LossesNumText from './LossesNumText/LossesNumText';
+import AllGamesText from './AllGamesText/AllGamesText';
+import PercentWinsText from './PercentWinsText/PercentWinsText';
 
 let RatingTab = (props) => {
-    let fullNamaeData = [
+    let fullNamaData = [
         { name: "Александров Игнат Анатолиевич" },
         { name: "Шевченко Рафаил Михайлович" },
         { name: "Мазайло Трофим Артёмович" },
@@ -44,7 +25,7 @@ let RatingTab = (props) => {
         { name: "Галкин Феликс Платонович" }
     ]
 
-    let tableTextBlockNameItems = fullNamaeData
+    let tableTextBlockNameItems = fullNamaData
         .map(element => <TableTextBlockName fullName={element.name} />)
 
     let winsNumDate = [
@@ -85,6 +66,43 @@ let RatingTab = (props) => {
 
     let lossesDateItems = lossesDate.map(element => <LossesNumText sumLosses={element.sum}></LossesNumText>)
 
+    let allGamesDate = [
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 },
+        { sum: 24534 }
+    ]
+
+    let allGamesDateItems = allGamesDate.map(element => <AllGamesText sumAllGames={element.sum} />)
+
+    let percentWinsDate = [
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' },
+        { sum: '87%' }
+    ]
+
+    let percentWinsDateItems = percentWinsDate.map(element => <PercentWinsText sumPercentWins={element.sum} />)
+
     return (
         <div>
             <main id={s.main_container}>
@@ -98,20 +116,7 @@ let RatingTab = (props) => {
                         </div>
                         <div className={s.block}>
                             <div className={s.block_title}>Всего игр</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
-                            <div className={s.block_text}>24534</div>
+                            {allGamesDateItems}
                         </div>
                         <div className={s.block}>
                             <div className={s.block_title}>Победы</div>
@@ -123,20 +128,7 @@ let RatingTab = (props) => {
                         </div>
                         <div className={s.block}>
                             <div className={`${s.block_title} ${s.percent_of_win}`}>Процент побед</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
-                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
+                            {percentWinsDateItems}                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
                         </div>
                     </div>
                 </div>

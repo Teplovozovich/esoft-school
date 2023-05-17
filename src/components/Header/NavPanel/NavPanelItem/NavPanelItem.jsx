@@ -5,11 +5,11 @@ import './NavPanelItem.css'
 const NavPanelItem = (props) => {
     return (
         <div id="nav-panel">
-            <div ><NavLink to="/GameTab" className="aboba">Игровое поле</NavLink></div>
+            <div><NavLink to="/GameTab">Игровое поле</NavLink></div>
             <div><NavLink to="/RatingTab">Рейтинг</NavLink></div>
-            <div>Активные игроки</div>
-            <div>История игр</div>
-            <div>Список игроков</div>
+            <div><NavLink to="/aboba">Активные игроки</NavLink></div>
+            <div><NavLink to="/abobkin">История игр</NavLink></div>
+            <div><NavLink to="/abobus">Список игроков</NavLink></div>
         </div>
 
     )

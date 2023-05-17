@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalWindow.css'
-import Button from './../../../components/common/Button/Button'
-import PageTitle from './../../common/PageTitle/PageTitle';
+import Button from '../../Common/Button/Button.jsx'
+import PageTitle from '../../Common/PageTitle/PageTitle.jsx';
 
 const ModalWindow = (props) => {
     return (
