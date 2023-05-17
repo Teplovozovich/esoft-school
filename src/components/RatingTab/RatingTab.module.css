@@ -61,31 +61,19 @@ body {
 .block_title {
     height: 48px;
     
-    font-weight: 500;
-    font-size: 16px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.24px;
     width: 141px; 
     
-    box-shadow: inset 0px -1px 0px #EEEFF5;
-    color: #373745;
-    /*border: 1px solid firebrick;*/
-}
 
-.block_text {
-    display: flex;
-    align-items: center;
-    height: 44px;
-    padding: 4px 0px;
-    color: #373745;
-
-    /*border: 1px solid slateblue;*/
-    box-shadow: inset 0px -1px 0px #EEEFF5;
 }
 
 .long_cell {
     width: 440px; 
+}
+
+.table_header {
+    font-weight: 600;
 }
 
 

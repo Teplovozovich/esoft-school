@@ -7,9 +7,9 @@ const NavPanelItem = (props) => {
         <div id="nav-panel">
             <div><NavLink to="/GameTab">Игровое поле</NavLink></div>
             <div><NavLink to="/RatingTab">Рейтинг</NavLink></div>
-            <div><NavLink to="/aboba">Активные игроки</NavLink></div>
-            <div><NavLink to="/abobkin">История игр</NavLink></div>
-            <div><NavLink to="/abobus">Список игроков</NavLink></div>
+            <div><NavLink to="/ActivePlayersTab">Активные игроки</NavLink></div>
+            <div><NavLink to="/GameHistoryTab">История игр</NavLink></div>
+            <div><NavLink to="/PlayersListTab">Список игроков</NavLink></div>
         </div>
 
     )

@@ -7,12 +7,15 @@
 #nav-panel {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
 
 a {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     text-decoration: none;
     color: inherit;
     border-radius: 200px;

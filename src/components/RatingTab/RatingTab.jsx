@@ -98,6 +98,7 @@ let RatingTab = (props) => {
         { sum: '87%' },
         { sum: '87%' },
         { sum: '87%' },
+        { sum: '87%' },
         { sum: '87%' }
     ]
 
@@ -111,24 +112,24 @@ let RatingTab = (props) => {
                     <PageTitle textPageTitle="Рейтинг игроков" />
                     <div className={s.blocks}>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.long_cell}`}>ФИО</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.long_cell}`}>ФИО</div>
                             {tableTextBlockNameItems}
                         </div>
                         <div className={s.block}>
-                            <div className={s.block_title}>Всего игр</div>
+                            <div className={`${s.block_title} ${s.table_header}`}>Всего игр</div>
                             {allGamesDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={s.block_title}>Победы</div>
+                            <div className={`${s.block_title} ${s.table_header}`}>Победы</div>
                             {winsNumDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={s.block_title}>Проигрыши</div>
+                            <div className={`${s.block_title} ${s.table_header}`}>Проигрыши</div>
                             {lossesDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.percent_of_win}`}>Процент побед</div>
-                            {percentWinsDateItems}                            <div className={`${s.block_text} ${s.text_percent_wins}`}>87%</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.percent_of_win}`}>Процент побед</div>
+                            {percentWinsDateItems}
                         </div>
                     </div>
                 </div>
