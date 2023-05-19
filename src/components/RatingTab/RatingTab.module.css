@@ -1,19 +1,11 @@
-body {
+.ratingTab {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
+    
 
     background: rgba(246, 246, 246, 1);
-}
-
-* {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.24px;
-    margin: 0px;
 }
 
 
@@ -38,6 +30,7 @@ body {
 
 .container {
     --border: 1px solid #60C2AA;
+    width: 962px;;
 }
 
 
@@ -60,22 +53,38 @@ body {
 
 .block_title {
     height: 48px;
-    
     display: flex;
     align-items: center;
-    width: 141px; 
-    
+    box-shadow: inset 0px -1px 0px #EEEFF5;
 
 }
 
 .long_cell {
-    width: 440px; 
+    padding: 12px 396px 12px 8px ;
+
 }
 
 .table_header {
     font-weight: 600;
 }
 
+.allGames {
+    padding: 8px 26px 8px 8px;
+}
+
+.wins {
+    padding: 8px 38px 8px 8px;
+}
+
+.losses {
+    padding: 8px 8px 8px 8px;
+
+}
+
+.winsPercent {
+    padding: 8px 8px 8px 8px;
+
+}
 
 
 

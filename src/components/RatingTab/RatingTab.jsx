@@ -105,7 +105,7 @@ let RatingTab = (props) => {
     let percentWinsDateItems = percentWinsDate.map(element => <PercentWinsText sumPercentWins={element.sum} />)
 
     return (
-        <div>
+        <div className={s.ratingTab}>
             <main id={s.main_container}>
                 <div className={s.container}>
 
@@ -116,19 +116,19 @@ let RatingTab = (props) => {
                             {tableTextBlockNameItems}
                         </div>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.table_header}`}>Всего игр</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.allGames}`}>Всего игр</div>
                             {allGamesDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.table_header}`}>Победы</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.wins}`}>Победы</div>
                             {winsNumDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.table_header}`}>Проигрыши</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.losses}`}>Проигрыши</div>
                             {lossesDateItems}
                         </div>
                         <div className={s.block}>
-                            <div className={`${s.block_title} ${s.table_header} ${s.percent_of_win}`}>Процент побед</div>
+                            <div className={`${s.block_title} ${s.table_header} ${s.percent_of_win} ${s.winsPercent}`}>Процент побед</div>
                             {percentWinsDateItems}
                         </div>
                     </div>

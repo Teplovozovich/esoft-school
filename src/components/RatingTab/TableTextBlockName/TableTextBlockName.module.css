@@ -1,10 +1,13 @@
 .block_text {
     display: flex;
     align-items: center;
-    height: 44px;
-    padding: 4px 0px;
+    height: 48px;
     color: #373745;
 
     /*border: 1px solid slateblue;*/
     box-shadow: inset 0px -1px 0px #EEEFF5;
+}
+
+.longCell{
+    padding: 8px 150px 8px 8px;
 }

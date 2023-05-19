@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Game.css';
 import ModalWindow from '../ModalWindow/ModalWindow';
+import { Routes, Route, Link, useHistory } from 'react-router-dom'
+import ActivePlayersTab from '../../ActivePlayersTab/ActivePlayersTab';
+
 
 const Game = (props) => {
     const [turn, setTurn] = useState('X');
@@ -96,8 +99,12 @@ const Game = (props) => {
             textPageTitle = `Ничья!`;
         }
 
+        function secondButtonClickHandler() {
+            console.log('aboba');
+            window.location.href = '/ActivePlayersTab';
+        }
         modalWindow = (
-            <ModalWindow secondButtonClickHandler={() => { console.log("aboba"); }} onClick={handleResetBoard} textPageTitle={textPageTitle} />
+            <ModalWindow secondButtonClickHandler={secondButtonClickHandler} onClick={handleResetBoard} textPageTitle={textPageTitle} />
         );
 
         gameStep = (
