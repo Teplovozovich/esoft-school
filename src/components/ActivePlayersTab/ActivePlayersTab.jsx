@@ -2,6 +2,7 @@ import React from 'react'
 
 import s from './ActivePlayersTab.module.css'
 import PageTitle from '../Common/PageTitle/PageTitle'
+import Switch from '../Common/Switch/Switch'
 
 const ActivePlayersTab = (props) => {
     return (
@@ -11,10 +12,9 @@ const ActivePlayersTab = (props) => {
                     <PageTitle textPageTitle="Активные игроки" />
                 </div>
                 <div className={s.textSwitch}>
-                    <p></p>
-                    <label class={s.switch}>
-                        <input type="checkbox"></input>
-                        <span class={s.slider}></span>
+                    <p>Только свободные</p>
+                    <label class={s.switch_btn}>
+                        <Switch />
                     </label>
                 </div>
             </div>

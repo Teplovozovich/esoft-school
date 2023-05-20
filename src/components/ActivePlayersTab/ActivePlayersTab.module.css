@@ -21,51 +21,76 @@
 }
 
 .activePlayersTitle{
-  display: flex;
+    display: flex;
+    width: 717px;
+    justify-content: space-between;
 }
 
-.switch {
+.switch-label {
+  display: inline-block;
+  width: 62px; /* ширина переключателя */
+  height: 24px; /* высота переключателя */
+  border-radius: 12px; /* радиус скругления */
+  background: #DCDCDF; /* цвет фона */
+  cursor: pointer;
   position: relative;
+}
+
+.textSwitch{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
-
-.switch input {
-  opacity: 0;
-  width: 36px;
-height: 24px;
-}
-
-.slider {
-  position: absolute;
-height: 14px;
-left: 3px;
-right: 0px;
-top: calc(50% - 14px/2);
-background: #DCDCDF;
-}
-
-.slider:before {
-  position: absolute;
+.switch-label::before {
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  height: 36px; /* высота кнопки */
+  width: 36px; /* ширина кнопки */
+  border-radius: 18px; /* радиус кнопки */
+  background: #F7F7F7; /* цвет кнопки */
+  top: -6px; /* положение кнопки по вертикали относительно основы */
+  left: -6px; /* положение кнопки по горизонтали относительно основы */
+  transition-duration: 300ms; /* анимация */
+  box-shadow: 0 0 10px 0 #999999; /* тень */
+  position: absolute;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.title {
+  display: flex;
+
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+/* for switch */
+
+.switch-label::after {
+  content: "";
+  font-weight: bold;
+  color: #999;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+.switch-label:hover::after {
+  color: #666;
 }
+
+#switch:checked + .switch-label {
+  background: #60C2AA;
+}
+
+#switch:checked + .switch-label::before {
+  left: 30px;
+  background: #3BA189;
+}
+
+#switch:checked + .switch-label::after {
+  content: "";
+  color: #118c4e;
+  right: auto;
+  left: 10px;
+}
+
+/* for switch */
