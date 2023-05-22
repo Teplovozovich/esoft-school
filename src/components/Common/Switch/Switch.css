@@ -1,5 +1,5 @@
 .switch-label {
-    display: inline-block;
+    display: flex;
     width: 33px; /* ширина переключателя */
     height: 14px; /* высота переключателя */
     border-radius: 12px; /* радиус скругления */
@@ -20,7 +20,7 @@
     top: -3px; /* положение кнопки по вертикали относительно основы */
     left: -3px; /* положение кнопки по горизонтали относительно основы */
     transition-duration: 300ms; /* анимация */
-    box-shadow: 0 0 10px 0 #999999; /* тень */
+    box-shadow: 0 0 3px 0 #999999; /* тень */
     position: absolute;
 }
 
@@ -53,4 +53,9 @@
     color: #118c4e;
     right: auto;
     left: 10px;
+}
+
+.switch_container{
+    display: flex;
+    
 }
