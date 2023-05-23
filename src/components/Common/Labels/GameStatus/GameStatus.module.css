@@ -1,0 +1,38 @@
+
+.primaryButton {
+    display: flex;
+    justify-content: center;
+
+    width: 100px;
+    height: 32px;
+
+    background: #A8D37F;
+    border-radius: 6px;
+}
+
+.secondaryButton {
+    display: flex;
+    justify-content: center;
+
+    width: 100px;
+    height: 32px;
+
+    background: #87CAE8;
+    border-radius: 6px;
+
+}
+
+
+.labelInButton{
+display: flex;
+align-items: center;
+}
+
+.primaryButton .labelInButton{
+color: #FFFFFF;
+}
+
+.secondaryButton .labelInButton{
+    color: #FFFFFF;
+}
+
