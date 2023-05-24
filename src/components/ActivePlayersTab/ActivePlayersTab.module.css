@@ -35,10 +35,11 @@
 
 .table__wrap {
   max-width: 717px;
+  width: 100%;
 }
 
 .table {
-  max-height: 720px;
+  
 }
 
 .textTable {
@@ -48,9 +49,8 @@
 .row {
   display: flex;
   height: 72px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: yellow;
   width: 100%;
 
 }
@@ -58,7 +58,7 @@
 .buttons {
   display: flex;
   width: 341px;;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 
 }

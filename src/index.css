@@ -2,6 +2,17 @@ html {
     box-sizing: border-box;;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(246, 246, 246, 1);
+    overflow: auto;
+  }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 *, *::before, *::after {
     box-sizing: inherit;
 }

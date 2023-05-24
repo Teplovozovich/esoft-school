@@ -94,3 +94,7 @@
     -webkit-user-select: none;
     user-select: none;
 }
+
+.currentPlayerInfoLabel {
+    color: #FFFFFF;
+}

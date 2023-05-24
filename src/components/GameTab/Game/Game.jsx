@@ -122,14 +122,14 @@ const Game = (props) => {
     } else {
         gameStep = (
             <div id="game-step">
-                <p>Ходит</p>
+                <p class="currentPlayerInfoLabel">Ходит</p>
                 &nbsp;
                 <img
                     id="imgCurrentPlayer"
                     src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'}
                 />
                 &nbsp;
-                <p>{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
+                <p class="currentPlayerInfoLabel">{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
             </div>
         );
     }

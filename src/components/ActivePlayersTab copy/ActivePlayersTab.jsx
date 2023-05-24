@@ -1,11 +1,10 @@
 import React from 'react'
 
 import s from './ActivePlayersTab.module.css'
-import PageTitle from '../Common/PageTitle/PageTitle'
-import Switch from '../Common/Switch/Switch'
-import GameStatus from '../Common/Labels/GameStatus/GameStatus'
-import CallPlayerButton from '../Common/CallPlayerButton/CallPlayerButton'
-import ItemActivePlayersTab from './ItemActivePlayersTab/ItemActivePlayersTab'
+import PageTitle from '../../Common/PageTitle/PageTitle'
+import Switch from '../../Common/Switch/Switch'
+import GameStatus from '../../Common/Labels/GameStatus/GameStatus'
+import CallPlayerButton from '../../Common/CallPlayerButton/CallPlayerButton'
 
 const ActivePlayersTab = (props) => {
     return (
@@ -40,10 +39,7 @@ const ActivePlayersTab = (props) => {
                         </div>
                     </div>
                 </div>
-                <ItemActivePlayersTab className="secondaryButton" />
-                <ItemActivePlayersTab className="secondaryButton" />
             </div>
-
         </div >
     )
 }
