@@ -1,0 +1,68 @@
+.mainContainer {
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 32px;
+gap: 24px;
+
+position: relative;
+width: 1074px;
+left: calc(50% - 1074px/2);
+top: 144px;
+bottom: 80px;
+
+/* Gray / White */
+
+background: #FFFFFF;
+/* Elevation / Lv2 */
+
+box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+border-radius: 40px;
+}
+
+.table__wrap {
+  max-width: 1010px;
+  width: 100%;
+}
+
+.table {
+  display: flex;
+}
+
+.thead {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px #EEEFF5;
+  gap: 16px;
+}
+
+.firstCell {
+  display: flex;
+  width: 678px;
+}
+
+.firstTheadCell {
+  padding-left: 8px;
+}
+
+.secondCell {
+  width: 160px;
+  background-color: saddlebrown;
+}
+
+.secondTheadCell {
+  padding-left: 8px;
+  
+}
+
+.thirdCell {
+  width: 140px;
+  background-color: aqua;
+}
+
+.thirdTheadCell {
+  padding-left: 8px;
+}
+
