@@ -1,13 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import s from './ActivePlayersTab.module.css'
 import PageTitle from '../Common/PageTitle/PageTitle'
 import Switch from '../Common/Switch/Switch'
-import GameStatus from '../Common/Labels/GameStatus/GameStatus'
-import CallPlayerButton from '../Common/CallPlayerButton/CallPlayerButton'
 import ItemActivePlayersTab from './ItemActivePlayersTab/ItemActivePlayersTab'
 
 const ActivePlayersTab = (props) => {
+    const [isFreeOnly, setIsFreeOnly] = useState(false);
+
+    let itemsActivePlayers = [
+        { id: 1, name: "Александров Игнат Анатолиевич", status: "primaryButton", textLabel: "Свободен" },
+        { id: 2, name: "Василенко Эрик Платонович", status: "secondaryButton", textLabel: "В игре" },
+        { id: 3, name: "Быков Юрий Виталиевич", status: "primaryButton", textLabel: "Свободен" },
+        { id: 4, name: "Галкин Феликс Платонович", status: "secondaryButton", textLabel: "В игре" },
+        { id: 5, name: "Комаров Цефас Александрович", status: "secondaryButton", textLabel: "В игре" },
+        { id: 6, name: "Шевченко Рафаил Михайлович", status: "secondaryButton", textLabel: "В игре" },
+        { id: 7, name: "Гордеев Шамиль Леонидович", status: "primaryButton", textLabel: "Свободен" },
+        { id: 8, name: "Бобров Фёдор Викторович", status: "primaryButton", textLabel: "Свободен" },
+        { id: 9, name: "Суворов Феликс Григорьевич", status: "secondaryButton", textLabel: "В игре" },
+        { id: 10, name: "Марков Йошка Фёдорович", status: "primaryButton", textLabel: "Свободен" }
+    ]
+
+    let filteredItemsActivePlayers = itemsActivePlayers.filter(player => !isFreeOnly || player.textLabel === "Свободен");
+
+    let itemsActivePlayersData = filteredItemsActivePlayers.map(element => <ItemActivePlayersTab className={element.status} textItem={element.name} textLabel={element.textLabel} />)
+
+    const handleSwitchChange = (event) => {
+        setIsFreeOnly(event.target.checked);
+    }
+
     return (
         <div className={s.mainContainer}>
             <div className={s.table__wrap}>
@@ -17,31 +38,14 @@ const ActivePlayersTab = (props) => {
                     </div>
                     <div className={s.textSwitch}>
                         <p>Только свободные</p>
-                        <label class={s.switch_btn}>
-                            <Switch />
+                        <label className={s.switch_btn}>
+                            <Switch onChange={handleSwitchChange} />
                         </label>
                     </div>
                 </div>
             </div>
             <div className={s.table__wrap}>
-                <div className={s.table}>
-                    <div className={s.row}>
-                        <p className={s.textTable}>Александров Игнат Анатолиевич</p>
-                        <div className={s.buttons}>
-                            <GameStatus className="primaryButton" textButton="Свободен" />
-                            <CallPlayerButton className="primaryButton" textButton="Позвать игрока" />
-                        </div>
-                    </div>
-                    <div className={s.row}>
-                        <p className={s.textTable}>Александров Игнат Анатолиевич</p>
-                        <div className={s.buttons}>
-                            <GameStatus className="secondaryButton" textButton="В игре" />
-                            <CallPlayerButton className="secondaryButton" textButton="Позвать игрока" />
-                        </div>
-                    </div>
-                </div>
-                <ItemActivePlayersTab className="secondaryButton" />
-                <ItemActivePlayersTab className="secondaryButton" />
+                {itemsActivePlayersData}
             </div>
 
         </div >

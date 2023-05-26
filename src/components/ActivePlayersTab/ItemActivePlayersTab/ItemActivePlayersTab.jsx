@@ -8,13 +8,13 @@ import CallPlayerButton from '../../Common/CallPlayerButton/CallPlayerButton'
 
 const ItemActivePlayersTab = (props) => {
     return (
-            <div className={s.row}>
-                <p className={s.textTable}>Александров Игнат Анатолиевич</p>
-                <div className={s.buttons}>
-                    <GameStatus className="primaryButton" textButton="Свободен" />
-                    <CallPlayerButton className="primaryButton" textButton="Позвать игрока" />
-                </div>
+        <div className={s.row}>
+            <p className={s.textTable}>{props.textItem}</p>
+            <div className={s.buttons}>
+                <GameStatus className={props.className} textLabel={props.textLabel} />
+                <CallPlayerButton className={props.className} textButton="Позвать игрока" />
             </div>
+        </div>
     )
 }
 

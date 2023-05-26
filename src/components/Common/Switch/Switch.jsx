@@ -5,7 +5,7 @@ const Switch = (props) => {
     return (
 
         <div className='switch_container'>
-            <input type="checkbox" id="switch"></input>
+            <input onChange={props.onChange} type="checkbox" id="switch"></input>
             <label for="switch" class="switch-label"></label>
         </div>
     );

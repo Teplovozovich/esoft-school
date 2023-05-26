@@ -5,7 +5,7 @@ const GameStatus = (props) => {
     return (
 
         <div>
-            <div className={`${s[props.className]}`} onClick={props.onClick}><p className={s.labelInButton}>{`${props.textButton}`}</p></div>
+            <div className={`${s[props.className]}`} onClick={props.onClick}><p className={s.labelInButton}>{`${props.textLabel}`}</p></div>
         </div>
     );
 }

@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 32px;
+  padding-bottom: 44px;
   gap: 24px;
   
-  position: absolute;
+  position: relative;
   width: 781px;
   left: calc(50% - 781px/2);
   top: 144px;
@@ -38,28 +39,4 @@
   width: 100%;
 }
 
-.table {
-  
-}
-
-.textTable {
-  width: 360px;
-}
-
-.row {
-  display: flex;
-  height: 72px;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-}
-
-.buttons {
-  display: flex;
-  width: 341px;;
-  justify-content: space-between;
-  align-items: center;
-
-}
 
