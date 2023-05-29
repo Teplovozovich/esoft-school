@@ -101,7 +101,6 @@ const Game = (props) => {
 
         function secondButtonClickHandler() {
             console.log('aboba');
-            window.location.href = '/ActivePlayersTab';
         }
         modalWindow = (
             <ModalWindow secondButtonClickHandler={secondButtonClickHandler} onClick={handleResetBoard} textPageTitle={textPageTitle} />

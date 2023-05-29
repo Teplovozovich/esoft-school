@@ -1,21 +1,31 @@
 import React from 'react'
 
-import s from './ItemActivePlayersTab.module.css'
-import PageTitle from '../../Common/PageTitle/PageTitle'
-import Switch from '../../Common/Switch/Switch'
-import GameStatus from '../../Common/Labels/GameStatus/GameStatus'
-import CallPlayerButton from '../../Common/CallPlayerButton/CallPlayerButton'
+import s from './ItemGameHistoryTab.module.css'
 
-const ItemActivePlayersTab = (props) => {
+const ItemGameHistoryTab = (props) => {
     return (
         <div className={s.row}>
-            <p className={s.textTable}>{props.textItem}</p>
-            <div className={s.buttons}>
-                <GameStatus className={props.className} textLabel={props.textLabel} />
-                <CallPlayerButton className={props.className} textButton="Позвать игрока" />
+            <div className={s.firstCell}>
+                <div className={s.firstPlayer}>
+                    <img src="../assets/svg/z.svg" />
+                    <p className={s.tableCell}>Терещенко У. Р.</p>
+                    <div className={s.forCup}><img src="../assets/svg/micro-cup.svg" /></div>
+                </div>
+                <p className={s.against}>против</p>
+                <div className={s.secondPlayer}>
+                    <img src="../assets/svg/micro-x.svg" />
+                    <p className={s.tableCell}>Многогрешный П. В.</p>
+                    <div className={s.forCup}><img src="../assets/svg/micro-cup.svg" /></div>
+                </div>
+            </div>
+            <div className={s.secondCell}>
+                <p className={s.tableCell}>12 февраля 2022</p>
+            </div>
+            <div className={s.thirdCell}>
+                <p className={s.tableCell}>43 мин 13 сек</p>
             </div>
         </div>
     )
 }
 
-export default ItemActivePlayersTab
+export default ItemGameHistoryTab

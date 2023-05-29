@@ -27,6 +27,7 @@ border-radius: 40px;
 
 .table {
   display: flex;
+  flex-direction: column;
 }
 
 .thead {
@@ -43,7 +44,7 @@ border-radius: 40px;
   width: 678px;
 }
 
-.firstTheadCell {
+.theadCell {
   padding-left: 8px;
 }
 
@@ -52,17 +53,18 @@ border-radius: 40px;
   background-color: saddlebrown;
 }
 
-.secondTheadCell {
-  padding-left: 8px;
-  
-}
-
 .thirdCell {
   width: 140px;
   background-color: aqua;
 }
 
-.thirdTheadCell {
-  padding-left: 8px;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px #EEEFF5;
+  gap: 16px;
 }
 

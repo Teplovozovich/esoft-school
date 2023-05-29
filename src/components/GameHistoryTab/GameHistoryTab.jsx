@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import s from './GameHistoryTab.module.css'
-import PageTitle from '../Common/PageTitle/PageTitle'
+import PageTitle from './../common/PageTitle/PageTitle'
+import ItemGameHistoryTab from './ItemGameHistoryTab/ItemGameHistoryTab';
 
 const GameHistoryTab = (props) => {
     const [isFreeOnly, setIsFreeOnly] = useState(false);
@@ -35,15 +36,16 @@ const GameHistoryTab = (props) => {
                 <div className={s.table}>
                     <div className={s.thead}>
                         <div className={s.firstCell}>
-                            <p className={s.firstTheadCell}>Игроки</p>
+                            <p className={s.theadCell}>Игроки</p>
                         </div>
                         <div className={s.secondCell}>
-                            <p className={s.secondTheadCell}>Дата</p>
+                            <p className={s.theadCell}>Дата</p>
                         </div>
                         <div className={s.thirdCell}>
-                            <p className={s.thirdTheadCell}>Время игры</p>
+                            <p className={s.theadCell}>Время игры</p>
                         </div>
                     </div>
+                    <ItemGameHistoryTab />
                 </div>
             </div>
 

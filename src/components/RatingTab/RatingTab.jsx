@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTitle from '../Common/PageTitle/PageTitle';
+import PageTitle from './../common/PageTitle/PageTitle';
 import s from './RatingTab.module.css'
 import TableTextBlockName from './TableTextBlockName/TableTextBlockName';
 import WinsNumText from './WinsNumText/WinsNumText';

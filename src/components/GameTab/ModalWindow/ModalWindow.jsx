@@ -1,7 +1,9 @@
 import React from 'react';
 import './ModalWindow.css'
-import Button from '../../Common/Button/Button.jsx'
-import PageTitle from '../../Common/PageTitle/PageTitle.jsx';
+import Button from './../../common/Button/Button'
+import PageTitle from './../../common/PageTitle/PageTitle';
+import { NavLink } from 'react-router-dom';
+
 
 const ModalWindow = (props) => {
     return (
@@ -12,8 +14,10 @@ const ModalWindow = (props) => {
                 <PageTitle textPageTitle={props.textPageTitle} />
 
                 <Button className="primary-button" textButton="Новая игра" onClick={props.onClick} />
-                <Button className="secondary-button" textButton="Выйти в меню" onClick={props.secondButtonClickHandler} />
-            </div>
+
+                <NavLink to="/ActivePlayersTab">
+                    <Button className="secondary-button" textButton="Выйти в меню" onClick={props.secondButtonClickHandler} />
+                </NavLink>            </div>
         </div>
     );
 };

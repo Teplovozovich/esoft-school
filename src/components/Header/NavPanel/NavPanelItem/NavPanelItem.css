@@ -1,4 +1,4 @@
-.active {
+.headerA.active {
     background: #60C2AA;
     
     color: white;
@@ -11,7 +11,7 @@
     gap: 10px;
 }
 
-a {
+.headerA {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@ a {
     line-height: 24px;
 }
 
-a:not(.active):hover {
+.headerA:not(.active):hover {
     background-color: #F7F7F7;
   }
 
