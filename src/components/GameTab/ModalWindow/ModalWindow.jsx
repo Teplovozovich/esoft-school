@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalWindow.css'
-import Button from './../../common/Button/Button'
-import PageTitle from './../../common/PageTitle/PageTitle';
+import Button from './../../Common/Button/Button'
+import PageTitle from './../../Common/PageTitle/PageTitle';
 import { NavLink } from 'react-router-dom';
 
 

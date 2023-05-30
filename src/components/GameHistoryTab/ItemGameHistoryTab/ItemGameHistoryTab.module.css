@@ -1,21 +1,21 @@
 .firstCell {
   display: flex;
-  padding-left: 16px;
+  padding-left: 14px;
   width: 678px;
 }
 
 .tableCell {
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .secondCell {
   width: 160px;
-  background-color: saddlebrown;
+  margin-top: 9px;
 }
 
 .thirdCell {
   width: 140px;
-  background-color: aqua;
+  margin-top: 9px;
 }
 
 .row {
@@ -28,24 +28,33 @@
   gap: 16px;
 }
 
+.wrap__rightSide {
+  display: flex;
+  gap: 16px;
+  height: 48px;
+}
+
 .firstPlayer {
   display: flex;
   align-items: center;
+  width: 214px;
 }
 
 .forCup {
-  margin-left: 8px;
+  display: flex;
+  margin-left: 6px;
 }
 
 .against {
   display: flex;
   align-items: center;
-  margin-left: 44px;
+  margin-left: 6px;
   font-weight: 600;
 }
 
 .secondPlayer {
   display: flex;
   align-items: center;
+  width: 214px;
   margin-left: 20px;
 }

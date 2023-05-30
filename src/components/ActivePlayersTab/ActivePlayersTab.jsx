@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import s from './ActivePlayersTab.module.css'
-import PageTitle from './../common/PageTitle/PageTitle'
-import Switch from './../common/Switch/Switch'
+import PageTitle from './../Common/PageTitle/PageTitle.jsx'
+import Switch from './../Common/Switch/Switch'
 import ItemActivePlayersTab from './ItemActivePlayersTab/ItemActivePlayersTab'
 
 const ActivePlayersTab = (props) => {

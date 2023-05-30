@@ -1,8 +1,8 @@
 import React from 'react'
 
 import s from './ItemActivePlayersTab.module.css'
-import GameStatus from './../../common/Labels/GameStatus/GameStatus'
-import CallPlayerButton from './../../common/CallPlayerButton/CallPlayerButton'
+import GameStatus from './../../Common/Labels/GameStatus/GameStatus'
+import CallPlayerButton from './../../Common/CallPlayerButton/CallPlayerButton'
 
 const ItemActivePlayersTab = (props) => {
     return (
