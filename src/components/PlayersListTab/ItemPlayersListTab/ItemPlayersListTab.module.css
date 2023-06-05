@@ -1,0 +1,47 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px #EEEFF5;
+  gap: 16px;
+}
+
+.rowCell{
+  padding-left: 8px;
+}
+
+.firstCell {
+  display: flex;
+  width: 440px;
+}
+
+.fourthCell {
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+.secondCell {
+  width: 108px;
+}
+
+.thirdCell {
+  width: 46px;
+}
+
+.fourthCell {
+  width: 152px;
+}
+
+.fifthCell {
+  width: 160px;
+}
+
+.sixthCell {
+  width: 160px;
+}
+
+.seventhCell {
+  width: 190px;
+}
+

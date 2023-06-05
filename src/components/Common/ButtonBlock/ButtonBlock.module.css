@@ -1,0 +1,67 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 174px;
+    height: 40px;
+
+    background: #F7F7F7;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background: #DCDCDF;
+}
+
+.secondaryButton {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+padding: 12px 20px;
+gap: 8px;
+
+width: 352px;
+height: 48px;
+
+/* Gray / 50 */
+
+background: #F7F7F7;
+border-radius: 12px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.secondaryButton:hover {
+    background: #DCDCDF;
+}
+
+.labelInButton{
+font-weight: 700;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+.Button .labelInButton{
+height: 24px;
+
+color: #FFFFFF;
+}
+
+.Button.unavailableButton {
+    background: rgba(96, 194, 170, 0.3);
+}
+.secondaryButton .labelInButton{
+height: 24px;
+
+color: #373745;
+}
+
+

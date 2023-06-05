@@ -9,8 +9,8 @@ import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <AuthorizationPage />
     <BrowserRouter>
       <App />
     </BrowserRouter>

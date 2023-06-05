@@ -73,18 +73,18 @@ flex-grow: 0;
 }
 
 .primary-button .labelInButton{
-    width: 87px;
 height: 24px;
 
 color: #FFFFFF;
 }
 
+.primary-button.unavailableButton {
+    background: rgba(96, 194, 170, 0.3);
+}
 .secondary-button .labelInButton{
-    width: 112px;
 height: 24px;
 
-
 color: #373745;
-
 }
+
 

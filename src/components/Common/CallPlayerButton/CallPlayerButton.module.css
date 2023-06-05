@@ -1,15 +1,13 @@
 
 .primaryButton {
     display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 
-width: 161px;
-height: 48px;
+    padding: 12px 20px;
 
-background: #60C2AA;
-border-radius: 12px;
-
+    background: #60C2AA;
+    border-radius: 12px;
 }
 
 .primaryButton:hover {
@@ -21,8 +19,7 @@ border-radius: 12px;
     justify-content: center;
     align-items: center;
     
-    width: 161px;
-    height: 48px;
+    padding: 12px 20px;
     
     background: #F7F7F7;
     opacity: 0.3;
@@ -35,26 +32,28 @@ border-radius: 12px;
 }
 
 .labelInButton{
-white-space: nowrap;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .primaryButton .labelInButton{
-    width: 87px;
-height: 24px;
+    width: 121px;
+    height: 24px;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .secondaryButton .labelInButton{
-    width: 112px;
-height: 24px;
+    width: 121px;
+    height: 24px;
 
+    color: #373745;
+}
 
-color: #373745;
-
+#addPlayer {
+    padding: 12px 32px;
 }
 

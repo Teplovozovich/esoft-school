@@ -1,0 +1,47 @@
+textarea {
+    resize: none;
+    width: -webkit-fill-available;
+    height: 48px;
+    line-height: 24px;
+    max-height: max-content;
+    overflow: hidden;
+    
+    box-sizing: border-box;
+
+    padding: 12px 20px;
+    gap: 8px;
+
+    /* Gray / White */
+
+    background: #FFFFFF;
+    /* Gray / 100 */
+
+    border: 1px solid #DCDCDF;
+    border-radius: 12px;
+}
+
+textarea::placeholder {
+    color: #B1B1B7;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400px;
+
+}
+
+textarea:hover {
+    border: 1px solid #60C2AA;
+}
+
+textarea:focus {
+    outline: none;
+    border-color:#3BA189;
+}
+
+.divArea {
+    height: 48px;
+}
+
+.wrongInputDates{
+    border-color: #E93E3E;
+
+}
