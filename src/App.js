@@ -9,7 +9,10 @@ import GameHistoryTab from './components/GameHistoryTab/GameHistoryTab';
 import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage';
 import PlayersListTab from './components/PlayersListTab/PlayersListTab';
 
-function App() {
+
+
+function App(props) {
+
   return (
     <div className="App">
       <Routes>
@@ -17,7 +20,7 @@ function App() {
         <Route path="/RatingTab" element={
           <>
             <Header />
-            <RatingTab />
+            <RatingTab fullNamaData={props.state.ratingPage.fullNamaData} winsNumDate={props.state.ratingPage.winsNumDate} lossesDate={props.state.ratingPage.lossesDate} allGamesDate={props.state.ratingPage.allGamesDate} percentWinsDate={props.state.ratingPage.percentWinsDate} />
           </>} />
         <Route path="/GameTab" element={
           <>
@@ -27,17 +30,17 @@ function App() {
         <Route path="/ActivePlayersTab" element={
           <>
             <Header />
-            <ActivePlayersTab />
+            <ActivePlayersTab itemsActivePlayers={props.state.itemsActivePlayers} />
           </>} />
         <Route path="/PlayersListTab" element={
           <>
             <Header />
-            <PlayersListTab />
+            <PlayersListTab itemsPlayersList={props.state.itemsPlayersList} />
           </>} />
         <Route path="/GameHistoryTab" element={
           <>
             <Header />
-            <GameHistoryTab />
+            <GameHistoryTab itemsGameHistoryTable={props.state.itemsGameHistoryTable} />
           </>} />
       </Routes>
     </div>

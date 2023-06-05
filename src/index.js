@@ -5,14 +5,13 @@ import 'typeface-roboto';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
-import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage';
+import state from './components/mobX/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <App state={state} />
     </BrowserRouter>
   </React.StrictMode>
 );

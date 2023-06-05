@@ -8,16 +8,6 @@ import ButtonBlock from '../Common/ButtonBlock/ButtonBlock'
 
 
 const PlayersListTab = (props) => {
-    const [isFreeOnly, setIsFreeOnly] = useState(false);
-
-
-    let itemsActivePlayers = [
-        { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "woman", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
-        { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "woman", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
-        { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "man", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
-    ];
-
-
     return (
         <div className={s.mainContainer}>
             <div className={s.table__wrap}>
@@ -56,7 +46,7 @@ const PlayersListTab = (props) => {
                         </div>
                     </div>
                     <div className={s.table__wrap}>
-                        <ItemPlayersListTab items={itemsActivePlayers} />
+                        <ItemPlayersListTab items={props.itemsPlayersList} />
                     </div>
                 </div>
             </div>

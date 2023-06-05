@@ -5,7 +5,7 @@ import CallPlayerButton from '../../Common/CallPlayerButton/CallPlayerButton';
 import UserLockStatus from '../../Common/Labels/UserLockStatus/UserLockStatus';
 import ButtonBlock from '../../Common/ButtonBlock/ButtonBlock';
 
-const ItemPlayersListTab = ({ items, onStatusChange }) => {
+const ItemPlayersListTab = ({ props, items, onStatusChange }) => {
     return (
         <div>
             {items.map((item) => (
