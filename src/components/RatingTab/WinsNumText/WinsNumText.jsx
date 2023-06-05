@@ -4,7 +4,7 @@ import s from './WinsNumText.module.css'
 
 const WinsNumText = (props) => {
     return (
-        <div className={`${s.block_text} ${s.text_wins}`}>
+        <div key={props.key} className={`${s.block_text} ${s.text_wins}`}>
             {props.sumWins}
         </div>
     );

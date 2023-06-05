@@ -4,7 +4,7 @@ import s from './AllGamesText.module.css'
 
 const AllGamesText = (props) => {
     return (
-        <div className={s.block_text}>{props.sumAllGames}</div>
+        <div key={props.key} className={s.block_text}>{props.sumAllGames}</div>
     )
 }
 

@@ -4,7 +4,7 @@ import './PageTitle.css'
 const PageTitle = (props) => {
     return (
         <div>
-            <p><h2>{props.textPageTitle}</h2></p>
+            <h2>{props.textPageTitle}</h2>
         </div>
     );
     debugger

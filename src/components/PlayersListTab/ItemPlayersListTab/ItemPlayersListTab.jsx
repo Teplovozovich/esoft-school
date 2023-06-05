@@ -11,40 +11,40 @@ const ItemPlayersListTab = ({ props, items, onStatusChange }) => {
             {items.map((item) => (
                 <div className={s.row} key={item.id}>
                     <div className={s.firstCell}>
-                        <p className={s.rowCell}>{item.name}</p>
+                        <div className={s.rowCell}>{item.name}</div>
                     </div>
                     <div className={s.secondCell}>
-                        <p className={s.rowCell}>{item.age}</p>
+                        <div className={s.rowCell}>{item.age}</div>
                     </div>
                     <div className={s.thirdCell}>
-                        <p className={s.rowCell}>
+                        <div className={s.rowCell}>
                             <img src="../assets/svg/girl.svg" alt="girl" />
-                        </p>
+                        </div>
                     </div>
                     <div className={s.fourthCell}>
-                        <p className={s.rowCell}>
+                        <div className={s.rowCell}>
                             <UserLockStatus
                                 className={
                                     item.status === 'blocked' ? 'secondaryButton' : 'primaryButton'
                                 }
                                 textLabel={item.status === 'blocked' ? 'Заблокирован' : 'Активен'}
                             />
-                        </p>
+                        </div>
                     </div>
                     <div className={s.fifthCell}>
-                        <p className={s.rowCell}>{item.created}</p>
+                        <div className={s.rowCell}>{item.created}</div>
                     </div>
                     <div className={s.sixthCell}>
-                        <p className={s.rowCell}>{item.changed}</p>
+                        <div className={s.rowCell}>{item.changed}</div>
                     </div>
                     <div className={s.seventhCell}>
-                        <p className={s.rowCell}>
+                        <div className={s.rowCell}>
                             <ButtonBlock
                                 className="button"
                                 isBlocked={item.isBlocked}
                                 onStatusChange={() => onStatusChange(item.id)}
                             />
-                        </p>
+                        </div>
                     </div>
                 </div>
             ))}

@@ -8,11 +8,11 @@ import AllGamesText from './AllGamesText/AllGamesText';
 import PercentWinsText from './PercentWinsText/PercentWinsText';
 
 let RatingTab = (props) => {
-    let tableTextBlockNameItems = props.fullNamaData.map(element => <TableTextBlockName fullName={element.name} />)
-    let winsNumDateItems = props.winsNumDate.map(element => <WinsNumText sumWins={element.sum} />)
-    let lossesDateItems = props.lossesDate.map(element => <LossesNumText sumLosses={element.sum}></LossesNumText>)
-    let allGamesDateItems = props.allGamesDate.map(element => <AllGamesText sumAllGames={element.sum} />)
-    let percentWinsDateItems = props.percentWinsDate.map(element => <PercentWinsText sumPercentWins={element.sum} />)
+    let tableTextBlockNameItems = props.fullNamaData.map(element => <TableTextBlockName key={element.id} fullName={element.name} />)
+    let winsNumDateItems = props.winsNumDate.map(element => <WinsNumText key={element.id} sumWins={element.sum} />)
+    let lossesDateItems = props.lossesDate.map(element => <LossesNumText key={element.id} sumLosses={element.sum}></LossesNumText>)
+    let allGamesDateItems = props.allGamesDate.map(element => <AllGamesText key={element.id} sumAllGames={element.sum} />)
+    let percentWinsDateItems = props.percentWinsDate.map(element => <PercentWinsText key={element.id} sumPercentWins={element.sum} />)
 
     return (
         <div className={s.ratingTab}>

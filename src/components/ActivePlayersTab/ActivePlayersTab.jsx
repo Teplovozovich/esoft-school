@@ -9,7 +9,7 @@ const ActivePlayersTab = (props) => {
     const [isFreeOnly, setIsFreeOnly] = useState(false);
 
     let filteredItemsActivePlayers = props.itemsActivePlayers.filter(player => !isFreeOnly || player.textLabel === "Свободен");
-    let itemsActivePlayersData = filteredItemsActivePlayers.map(element => <ItemActivePlayersTab className={element.status} textItem={element.name} textLabel={element.textLabel} />)
+    let itemsActivePlayersData = filteredItemsActivePlayers.map(element => <ItemActivePlayersTab key={element.id} className={element.status} textItem={element.name} textLabel={element.textLabel} />)
 
     const handleSwitchChange = (event) => {
         setIsFreeOnly(event.target.checked);

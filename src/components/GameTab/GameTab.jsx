@@ -7,13 +7,13 @@ import Chat from './Chat/Chat';
 
 const GameTab = (props) => {
     return (
-        <body>
+        <div>
             <div id="main-container">
                 <Players />
                 <Game />
                 <Chat />
             </div>
-        </body>
+        </div>
     )
 }
 

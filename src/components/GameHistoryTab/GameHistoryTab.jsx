@@ -8,6 +8,7 @@ const GameHistoryTab = (props) => {
     const [isFreeOnly, setIsFreeOnly] = useState(false);
 
     let itemsGameHistoryDataTable = props.itemsGameHistoryTable.map(element => <ItemGameHistoryTab
+        key={element.id}
         id={element.id}
         gameTimePlayed={element.gameTimePlayed}
         date={element.date}

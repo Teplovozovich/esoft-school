@@ -110,7 +110,18 @@ let state = {
         { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "woman", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
         { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "woman", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
         { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "man", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
-    ]
+    ],
+    handleStatusChange: function(id) {
+        const players = this.itemsPlayersList.slice(); // создаем копию массива игроков
+        const playerIndex = players.findIndex(p => p.id === id); // ищем индекс игрока по id
+        if (playerIndex !== -1) {
+          const player = players[playerIndex]; // получаем игрока по индексу
+          player.status = player.status === "primaryButton" ? "secondaryButton" : "primaryButton"; // меняем значение свойства status
+          player.isBlocked = player.isBlocked === "blocked" ? "unblocked" : "blocked"; // меняем значение свойства isBlocked
+          this.itemsPlayersList = players; // обновляем массив игроков в state
+        }
+      }
 }
+ 
 
 export default state;

@@ -4,7 +4,7 @@ import s from './LossesNumText.module.css'
 
 const LossesNumText = (props) => {
     return (
-        <div className={`${s.block_text} ${s.text_losses}`}>{props.sumLosses}</div>
+        <div key={props.key} className={`${s.block_text} ${s.text_losses}`}>{props.sumLosses}</div>
 
     )
 }
