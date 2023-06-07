@@ -5,7 +5,8 @@ import CallPlayerButton from '../../Common/CallPlayerButton/CallPlayerButton';
 import UserLockStatus from '../../Common/Labels/UserLockStatus/UserLockStatus';
 import ButtonBlock from '../../Common/ButtonBlock/ButtonBlock';
 
-const ItemPlayersListTab = ({ props, items, onStatusChange }) => {
+const ItemPlayersListTab = (props) => {
+    const { items } = props;
     return (
         <div>
             {items.map((item) => (
@@ -18,7 +19,7 @@ const ItemPlayersListTab = ({ props, items, onStatusChange }) => {
                     </div>
                     <div className={s.thirdCell}>
                         <div className={s.rowCell}>
-                            <img src="../assets/svg/girl.svg" alt="girl" />
+                            <img src={item.sex === "boy" ? "../assets/svg/boy.svg" : "../assets/svg/girl.svg"} alt="girl" />
                         </div>
                     </div>
                     <div className={s.fourthCell}>
@@ -42,7 +43,7 @@ const ItemPlayersListTab = ({ props, items, onStatusChange }) => {
                             <ButtonBlock
                                 className="button"
                                 isBlocked={item.isBlocked}
-                                onStatusChange={() => onStatusChange(item.id)}
+                                onClick={() => props.handleStatusChange(item.id)}
                             />
                         </div>
                     </div>

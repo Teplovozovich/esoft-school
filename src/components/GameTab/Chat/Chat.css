@@ -125,6 +125,9 @@
     background: #60C2AA;
     border-radius: 12px;
 }
+.msg-interactive-elements button:hover {
+    background-color: #3BA189;
+}
 
 .msg-interactive-elements textarea {
     resize: none;

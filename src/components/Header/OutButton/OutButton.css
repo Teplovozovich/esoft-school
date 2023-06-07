@@ -1,3 +1,11 @@
 #signOutButton {
     display: flex;
+    height: 18px;
+    width: 18px;
+    background-image: url('./../../../../public/assets/svg/signout-icon.svg');
+}
+
+#signOutButton:hover {
+    background-image: url('./../../../../public/assets/svg/signout-icon-hover.svg');
+
 }

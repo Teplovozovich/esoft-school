@@ -15,6 +15,16 @@ const AuthorizationPage = (props) => {
     const canSubmit = loginText.length > 0 && passwordText.length > 0;
     const buttonClass = canSubmit ? "primary-button" : "primary-button unavailableButton";
 
+    let allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._";
+
+    const handleKeyPress = (e) => {
+        const allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._";
+        const char = e.key;
+        if (!allowedChars.includes(char)) {
+            e.preventDefault();
+        }
+    }
+
     const handleLogin = () => {
         if (loginText === 'aboba' && passwordText === 'aboba') {
             navigate('/ActivePlayersTab');
@@ -35,7 +45,9 @@ const AuthorizationPage = (props) => {
                     <InputArea
                         placeholder="Логин"
                         onChange={(e) => setLoginText(e.target.value)}
+                        onKeyPress={handleKeyPress}
                         className={isLoginWrong ? "wrongInputDates" : ''}
+                        value={loginText}
                     />
                     {isLoginWrong && <p className={s.error}>Неверный логин</p>}
                 </div>
@@ -43,10 +55,14 @@ const AuthorizationPage = (props) => {
                     <InputArea
                         placeholder="Пароль"
                         onChange={(e) => setPasswordText(e.target.value)}
+                        onKeyPress={handleKeyPress}
                         className={isPasswordWrong ? "wrongInputDates" : ''}
+                        value={passwordText}
                     />
                     {isPasswordWrong && <p className={s.error}>Неверный пароль</p>}
                 </div>
+
+
                 <div className={s.thirdInput}>
                     <Button className={buttonClass} textButton="Войти" onClick={handleLogin} />
                 </div>

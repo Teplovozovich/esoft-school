@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-
 import s from './PlayersListTab.module.css'
 import PageTitle from '../Common/PageTitle/PageTitle.jsx'
 import ItemPlayersListTab from './ItemPlayersListTab/ItemPlayersListTab'
 import CallPlayerButton from './../Common/CallPlayerButton/CallPlayerButton'
-import ButtonBlock from '../Common/ButtonBlock/ButtonBlock'
-
+import ModalWindow from './ModalWindow/ModalWindow'
 
 const PlayersListTab = (props) => {
+    const [showModal, setShowModal] = useState(false)
+
+    const handleAddPlayerButtonClick = () => {
+        setShowModal(true)
+    }
+
+    const handleModalSecondButtonClick = () => {
+        setShowModal(false)
+    }
+
     return (
         <div className={s.mainContainer}>
             <div className={s.table__wrap}>
@@ -16,7 +24,7 @@ const PlayersListTab = (props) => {
                         <PageTitle textPageTitle="Список игроков" />
                     </div>
                     <div className={s.button}>
-                        <CallPlayerButton className="primaryButton" id="addPlayer" textButton="Добавить игрока" />
+                        <CallPlayerButton className="primaryButton" id="addPlayer" textButton="Добавить игрока" onClick={handleAddPlayerButtonClick} />
                     </div>
                 </div>
             </div>
@@ -46,10 +54,20 @@ const PlayersListTab = (props) => {
                         </div>
                     </div>
                     <div className={s.table__wrap}>
-                        <ItemPlayersListTab items={props.itemsPlayersList} />
+                        <ItemPlayersListTab
+                            items={props.state}
+                            handleStatusChange={props.handleStatusChange}
+                        />
                     </div>
                 </div>
             </div>
+            {showModal && (
+                <ModalWindow
+                    textPageTitle="Добавьте игрока"
+                    onClick={handleModalSecondButtonClick}
+                    secondButtonClickHandler={handleModalSecondButtonClick}
+                />
+            )}
         </div>
     )
 }

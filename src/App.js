@@ -12,7 +12,6 @@ import PlayersListTab from './components/PlayersListTab/PlayersListTab';
 
 
 function App(props) {
-
   return (
     <div className="App">
       <Routes>
@@ -32,15 +31,15 @@ function App(props) {
             <Header />
             <ActivePlayersTab itemsActivePlayers={props.state.itemsActivePlayers} />
           </>} />
-        <Route path="/PlayersListTab" element={
-          <>
-            <Header />
-            <PlayersListTab itemsPlayersList={props.state.itemsPlayersList} />
-          </>} />
         <Route path="/GameHistoryTab" element={
           <>
             <Header />
             <GameHistoryTab itemsGameHistoryTable={props.state.itemsGameHistoryTable} />
+          </>} />
+        <Route path="/PlayersListTab" element={
+          <>
+            <Header />
+            <PlayersListTab state={props.state.itemsPlayersList} handleStatusChange={props.handleStatusChange} />
           </>} />
       </Routes>
     </div>

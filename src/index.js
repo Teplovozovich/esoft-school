@@ -6,20 +6,20 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 import state, { subscribe } from './components/mobX/state';
-
-let renderEntireTree = () => {
+import { handleStatusChange } from './components/mobX/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App state={state} />
-    </BrowserRouter>
-  </React.StrictMode>
-);
 
+let rerenderEntireTree = (state) => {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App state={state} handleStatusChange={handleStatusChange} />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
 }
 
-renderEntireTree(state)
-subscribe(renderEntireTree)
-reportWebVitals();
+rerenderEntireTree(state)
+
+subscribe(rerenderEntireTree)

@@ -1,3 +1,6 @@
+let rerenderEntireTree = () => {
+}
+
 let state = {
     ratingPage: {
         fullNamaData: [
@@ -107,21 +110,30 @@ let state = {
         { id: 11, firstPlayer: "Сасько Ц. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Никифорова Б. А.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
     ],
     itemsPlayersList: [
-        { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "woman", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
-        { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "woman", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
-        { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "man", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
+        { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "girl", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
+        { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+        { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
     ],
-    handleStatusChange: function(id) {
-        const players = this.itemsPlayersList.slice(); // создаем копию массива игроков
-        const playerIndex = players.findIndex(p => p.id === id); // ищем индекс игрока по id
-        if (playerIndex !== -1) {
-          const player = players[playerIndex]; // получаем игрока по индексу
-          player.status = player.status === "primaryButton" ? "secondaryButton" : "primaryButton"; // меняем значение свойства status
-          player.isBlocked = player.isBlocked === "blocked" ? "unblocked" : "blocked"; // меняем значение свойства isBlocked
-          this.itemsPlayersList = players; // обновляем массив игроков в state
-        }
-      }
+
 }
- 
+
+export const handleStatusChange = (id) => {
+    state.itemsPlayersList = state.itemsPlayersList.map(player => {
+        if (player.id === id) {
+            if (player.status === "blocked") {
+                return { ...player, status: "active", isBlocked: "unblocked" };
+            } else {
+                return { ...player, status: "blocked", isBlocked: "blocked" };
+            }
+        }
+        return player;
+    });
+    rerenderEntireTree(state);
+};
+
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
 
 export default state;
