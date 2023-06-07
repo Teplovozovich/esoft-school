@@ -24,7 +24,12 @@ const PlayersListTab = (props) => {
                         <PageTitle textPageTitle="Список игроков" />
                     </div>
                     <div className={s.button}>
-                        <CallPlayerButton className="primaryButton" id="addPlayer" textButton="Добавить игрока" onClick={handleAddPlayerButtonClick} />
+                        <CallPlayerButton
+                            className="primaryButton"
+                            id="addPlayer"
+                            textButton="Добавить игрока"
+                            onClick={handleAddPlayerButtonClick}
+                        />
                     </div>
                 </div>
             </div>
@@ -63,8 +68,9 @@ const PlayersListTab = (props) => {
             </div>
             {showModal && (
                 <ModalWindow
+                    handleAddButtonClick={props.handleAddButtonClick}
                     textPageTitle="Добавьте игрока"
-                    onClick={handleModalSecondButtonClick}
+                    onClick={props.handleAddButtonClick}
                     secondButtonClickHandler={handleModalSecondButtonClick}
                 />
             )}

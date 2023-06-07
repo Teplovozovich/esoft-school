@@ -1,4 +1,4 @@
-textarea {
+input {
     resize: none;
     width: -webkit-fill-available;
     height: 48px;
@@ -20,7 +20,7 @@ textarea {
     border-radius: 12px;
 }
 
-textarea::placeholder {
+input::placeholder {
     color: #B1B1B7;
     font-size: 14px;
     line-height: 24px;
@@ -28,11 +28,11 @@ textarea::placeholder {
 
 }
 
-textarea:hover {
+input:hover {
     border: 1px solid #60C2AA;
 }
 
-textarea:focus {
+input:focus {
     outline: none;
     border-color:#3BA189;
 }
@@ -45,3 +45,4 @@ textarea:focus {
     border-color: #E93E3E;
 
 }
+

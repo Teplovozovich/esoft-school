@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import s from './ModalWindow.module.css'
 import Button from './../../Common/Button/Button'
 import PageTitle from './../../Common/PageTitle/PageTitle';
@@ -7,6 +7,9 @@ import InputArea from '../../Common/InputArea/InputArea';
 
 
 const ModalWindow = (props) => {
+    const [fullname, setName] = useState('');
+    const [age, setAge] = useState('');
+    const [sex, setSex] = useState('');
 
     const handleKeyPress = (e) => {
         const allowedChars = "0123456789";
@@ -28,16 +31,19 @@ const ModalWindow = (props) => {
                 <PageTitle textPageTitle={props.textPageTitle} />
                 <div className={s.modalWrap}>
                     <div className={s.fio}>ФИО</div>
-                    <InputArea placeholder="Иванов Иван Иванович" />
+                    <InputArea
+                        placeholder="Иванов Иван Иванович"
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div>
                 <div className={s.modalWrap}>
-
                     <div className={s.inputs}>
                         <div className={s.age}>
                             <div className={s.fio}>Возраст</div>
                             <InputArea
                                 placeholder="0"
                                 onKeyPress={handleKeyPress}
+                                onChange={(e) => setAge(e.target.value)}
                             />
                         </div>
                         <div className={s.sex}>
@@ -45,14 +51,14 @@ const ModalWindow = (props) => {
                                 <div className={s.fio}>Пол</div>
                                 <div className={s.people}>
                                     <label>
-                                        <input type="radio" name="option" value="boy" />
+                                        <input type="radio" name="option" value="girl" onChange={(e) => setSex(e.target.value)} />
                                         <div className={s.img}>
                                             <img src="../assets/svg/big-girl.svg" alt="boy" />
                                         </div>
                                     </label>
 
                                     <label>
-                                        <input type="radio" name="option" value="girl" />
+                                        <input type="radio" name="option" value="boy" onChange={(e) => setSex(e.target.value)} />
                                         <div className={s.img}>
                                             <img src="../assets/svg/big-boy.svg" alt="girl" />
                                         </div>
@@ -63,8 +69,11 @@ const ModalWindow = (props) => {
                         </div>
                     </div>
                 </div>
-
-                <Button className="primary-button" textButton="Добавить" onClick={props.onClick} />
+                <Button
+                    className="primary-button"
+                    textButton="Добавить"
+                    onClick={props.onClick}
+                />
             </div>
         </div>
     );

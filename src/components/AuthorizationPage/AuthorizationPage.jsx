@@ -58,6 +58,7 @@ const AuthorizationPage = (props) => {
                         onKeyPress={handleKeyPress}
                         className={isPasswordWrong ? "wrongInputDates" : ''}
                         value={passwordText}
+                        type="password"
                     />
                     {isPasswordWrong && <p className={s.error}>Неверный пароль</p>}
                 </div>

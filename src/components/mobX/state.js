@@ -131,9 +131,25 @@ export const handleStatusChange = (id) => {
     rerenderEntireTree(state);
 };
 
+export const handleAddButtonClick = () => {
+    const newPlayer = {
+        id: state.itemsPlayersList.length + 1,
+        //name: fullname,
+        //age: age,
+        // sex: sex,
+        created: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
+        changed: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
+        status: "active",
+        isBlocked: "blocked"
+    };
+    state.itemsPlayersList.push(newPlayer);
+    rerenderEntireTree(state);
+};
+
 
 export const subscribe = (observer) => {
     rerenderEntireTree = observer;
 }
+
 
 export default state;

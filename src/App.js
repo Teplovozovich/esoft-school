@@ -39,7 +39,7 @@ function App(props) {
         <Route path="/PlayersListTab" element={
           <>
             <Header />
-            <PlayersListTab state={props.state.itemsPlayersList} handleStatusChange={props.handleStatusChange} />
+            <PlayersListTab handleAddButtonClick={props.handleAddButtonClick} state={props.state.itemsPlayersList} handleStatusChange={props.handleStatusChange} />
           </>} />
       </Routes>
     </div>

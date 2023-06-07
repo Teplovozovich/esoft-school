@@ -4,13 +4,14 @@ import s from './InputArea.module.css';
 const InputArea = (props) => {
     return (
         <div className={s.divArea}>
-            <textarea
+            <input
                 className={s[props.className]}
                 onKeyPress={props.onKeyPress}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
-                value={props.value} // Add this line to set the value of the textarea
-            ></textarea>
+                value={props.value}
+                type={props.type}
+            ></input>
         </div>
     );
 };

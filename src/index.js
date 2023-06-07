@@ -6,7 +6,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 import state, { subscribe } from './components/mobX/state';
-import { handleStatusChange } from './components/mobX/state';
+import { handleStatusChange, handleAddButtonClick } from './components/mobX/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,7 +14,7 @@ let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} handleStatusChange={handleStatusChange} />
+        <App state={state} handleAddButtonClick={handleAddButtonClick} handleStatusChange={handleStatusChange} />
       </BrowserRouter>
     </React.StrictMode>
   );
