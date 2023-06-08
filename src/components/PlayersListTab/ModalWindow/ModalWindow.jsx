@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import s from './ModalWindow.module.css'
 import Button from './../../Common/Button/Button'
 import PageTitle from './../../Common/PageTitle/PageTitle';
 import { NavLink } from 'react-router-dom';
-import InputArea from '../../Common/InputArea/InputArea';
 
+const InputArea = React.forwardRef((props, ref) => {
+    return (
+        <div>
+            <input type="text" ref={ref} {...props} />
+        </div>
+    );
+});
 
 const ModalWindow = (props) => {
     const [fullname, setName] = useState('');
     const [age, setAge] = useState('');
     const [sex, setSex] = useState('');
+
+    let newInputAgeElement = React.useRef(null);
 
     const handleKeyPress = (e) => {
         const allowedChars = "0123456789";
@@ -17,6 +25,12 @@ const ModalWindow = (props) => {
         if (!allowedChars.includes(char)) {
             e.preventDefault();
         }
+    }
+
+    let onInputAgeChange = () => {
+        let text = newInputAgeElement.current.value;
+        props.updateNewInputAgeText(text);
+        console.log(props.newInputAge);
     }
 
     return (
@@ -41,9 +55,11 @@ const ModalWindow = (props) => {
                         <div className={s.age}>
                             <div className={s.fio}>Возраст</div>
                             <InputArea
+                                ref={newInputAgeElement}
                                 placeholder="0"
                                 onKeyPress={handleKeyPress}
-                                onChange={(e) => setAge(e.target.value)}
+                                onChange={onInputAgeChange}
+                                value={props.newInputAge}
                             />
                         </div>
                         <div className={s.sex}>
@@ -72,7 +88,7 @@ const ModalWindow = (props) => {
                 <Button
                     className="primary-button"
                     textButton="Добавить"
-                    onClick={props.onClick}
+                    onClick={props.handleAddButtonClick}
                 />
             </div>
         </div>

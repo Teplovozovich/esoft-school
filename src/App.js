@@ -29,17 +29,22 @@ function App(props) {
         <Route path="/ActivePlayersTab" element={
           <>
             <Header />
-            <ActivePlayersTab itemsActivePlayers={props.state.itemsActivePlayers} />
+            <ActivePlayersTab itemsActivePlayers={props.state.activePlayersPage.itemsActivePlayers} />
           </>} />
         <Route path="/GameHistoryTab" element={
           <>
             <Header />
-            <GameHistoryTab itemsGameHistoryTable={props.state.itemsGameHistoryTable} />
+            <GameHistoryTab itemsGameHistoryTable={props.state.gameHistoryPage.itemsGameHistoryTable} />
           </>} />
         <Route path="/PlayersListTab" element={
           <>
             <Header />
-            <PlayersListTab handleAddButtonClick={props.handleAddButtonClick} state={props.state.itemsPlayersList} handleStatusChange={props.handleStatusChange} />
+            <PlayersListTab
+              handleAddButtonClick={props.handleAddButtonClick}
+              playersListPage={props.state.playersListPage}
+              handleStatusChange={props.handleStatusChange}
+              updateNewInputAgeText={props.updateNewInputAgeText}
+            />
           </>} />
       </Routes>
     </div>

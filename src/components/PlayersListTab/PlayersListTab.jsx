@@ -60,7 +60,7 @@ const PlayersListTab = (props) => {
                     </div>
                     <div className={s.table__wrap}>
                         <ItemPlayersListTab
-                            items={props.state}
+                            items={props.playersListPage.itemsPlayersList}
                             handleStatusChange={props.handleStatusChange}
                         />
                     </div>
@@ -70,8 +70,9 @@ const PlayersListTab = (props) => {
                 <ModalWindow
                     handleAddButtonClick={props.handleAddButtonClick}
                     textPageTitle="Добавьте игрока"
-                    onClick={props.handleAddButtonClick}
                     secondButtonClickHandler={handleModalSecondButtonClick}
+                    newInputAge={props.playersListPage.newInputAge}
+                    updateNewInputAgeText={props.updateNewInputAgeText}
                 />
             )}
         </div>

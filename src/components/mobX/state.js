@@ -84,41 +84,48 @@ let state = {
             { sum: '87%' }
         ],
     },
-    itemsActivePlayers: [
-        { id: 1, name: "Александров Игнат Анатолиевич", status: "primaryButton", textLabel: "Свободен" },
-        { id: 2, name: "Василенко Эрик Платонович", status: "secondaryButton", textLabel: "В игре" },
-        { id: 3, name: "Быков Юрий Виталиевич", status: "primaryButton", textLabel: "Свободен" },
-        { id: 4, name: "Галкин Феликс Платонович", status: "secondaryButton", textLabel: "В игре" },
-        { id: 5, name: "Комаров Цефас Александрович", status: "secondaryButton", textLabel: "В игре" },
-        { id: 6, name: "Шевченко Рафаил Михайлович", status: "secondaryButton", textLabel: "В игре" },
-        { id: 7, name: "Гордеев Шамиль Леонидович", status: "primaryButton", textLabel: "Свободен" },
-        { id: 8, name: "Бобров Фёдор Викторович", status: "primaryButton", textLabel: "Свободен" },
-        { id: 9, name: "Суворов Феликс Григорьевич", status: "secondaryButton", textLabel: "В игре" },
-        { id: 10, name: "Марков Йошка Фёдорович", status: "primaryButton", textLabel: "Свободен" }
-    ],
-    itemsGameHistoryTable: [
-        { id: 1, firstPlayer: "Терещенко У. Р.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Многогрешный П. В.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 2, firstPlayer: "Горбачёв А. Д.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Многогрешный П. В.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 3, firstPlayer: "Константинов В. Н.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Сасько Ц. А.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 4, firstPlayer: "Никифорова Б. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Горбачёв А. Д.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 5, firstPlayer: "Кулишенко К. И.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Вишняков Ч. М.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 6, firstPlayer: "Гриневска Д. Б.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Кудрявцев Э. В.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 7, firstPlayer: "Нестеров Х. А.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Исаева О. А.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 8, firstPlayer: "Исаева О. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Кулишенко К. И.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 9, firstPlayer: "Коновалова В. В.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Терещенко У. Р.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 10, firstPlayer: "Казаков Х. Е.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Овчаренко Б. М.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-        { id: 11, firstPlayer: "Сасько Ц. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Никифорова Б. А.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
-    ],
-    itemsPlayersList: [
-        { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "girl", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
-        { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
-        { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
-    ],
+    activePlayersPage: {
+        itemsActivePlayers: [
+            { id: 1, name: "Александров Игнат Анатолиевич", status: "primaryButton", textLabel: "Свободен" },
+            { id: 2, name: "Василенко Эрик Платонович", status: "secondaryButton", textLabel: "В игре" },
+            { id: 3, name: "Быков Юрий Виталиевич", status: "primaryButton", textLabel: "Свободен" },
+            { id: 4, name: "Галкин Феликс Платонович", status: "secondaryButton", textLabel: "В игре" },
+            { id: 5, name: "Комаров Цефас Александрович", status: "secondaryButton", textLabel: "В игре" },
+            { id: 6, name: "Шевченко Рафаил Михайлович", status: "secondaryButton", textLabel: "В игре" },
+            { id: 7, name: "Гордеев Шамиль Леонидович", status: "primaryButton", textLabel: "Свободен" },
+            { id: 8, name: "Бобров Фёдор Викторович", status: "primaryButton", textLabel: "Свободен" },
+            { id: 9, name: "Суворов Феликс Григорьевич", status: "secondaryButton", textLabel: "В игре" },
+            { id: 10, name: "Марков Йошка Фёдорович", status: "primaryButton", textLabel: "Свободен" }
+        ]
+    },
+    gameHistoryPage: {
+        itemsGameHistoryTable: [
+            { id: 1, firstPlayer: "Терещенко У. Р.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Многогрешный П. В.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 2, firstPlayer: "Горбачёв А. Д.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Многогрешный П. В.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 3, firstPlayer: "Константинов В. Н.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Сасько Ц. А.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 4, firstPlayer: "Никифорова Б. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Горбачёв А. Д.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 5, firstPlayer: "Кулишенко К. И.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Вишняков Ч. М.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 6, firstPlayer: "Гриневска Д. Б.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Кудрявцев Э. В.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 7, firstPlayer: "Нестеров Х. А.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Исаева О. А.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 8, firstPlayer: "Исаева О. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Кулишенко К. И.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 9, firstPlayer: "Коновалова В. В.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Терещенко У. Р.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 10, firstPlayer: "Казаков Х. Е.", firstPlayerSide: "zero", firstPlayerCup: "1", secondPlayer: "Овчаренко Б. М.", secondPlayerSide: "cross", secondPlayerCup: "0", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+            { id: 11, firstPlayer: "Сасько Ц. А.", firstPlayerSide: "zero", firstPlayerCup: "0", secondPlayer: "Никифорова Б. А.", secondPlayerSide: "cross", secondPlayerCup: "1", date: "12 февраля 2022", gameTimePlayed: "43 мин 13 сек" },
+        ]
+    },
+    playersListPage: {
+        itemsPlayersList: [
+            { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "girl", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
+            { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+            { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
+        ],
+        newInputAge: ''
+    },
 
 }
 
 export const handleStatusChange = (id) => {
-    state.itemsPlayersList = state.itemsPlayersList.map(player => {
+    state.playersListPage.itemsPlayersList = state.playersListPage.itemsPlayersList.map(player => {
         if (player.id === id) {
             if (player.status === "blocked") {
                 return { ...player, status: "active", isBlocked: "unblocked" };
@@ -131,18 +138,23 @@ export const handleStatusChange = (id) => {
     rerenderEntireTree(state);
 };
 
+export const updateNewInputAgeText = (newText) => {
+    state.playersListPage.newInputAge = newText;
+    rerenderEntireTree(state);
+};
+
 export const handleAddButtonClick = () => {
     const newPlayer = {
-        id: state.itemsPlayersList.length + 1,
-        //name: fullname,
-        //age: age,
-        // sex: sex,
+        id: state.playersListPage.itemsPlayersList.length + 1,
+        name: "a",
+        age: state.playersListPage.newInputAge,
+        sex: "a",
         created: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
         changed: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
         status: "active",
         isBlocked: "blocked"
     };
-    state.itemsPlayersList.push(newPlayer);
+    state.playersListPage.itemsPlayersList.push(newPlayer);
     rerenderEntireTree(state);
 };
 
