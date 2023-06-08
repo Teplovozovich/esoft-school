@@ -3,21 +3,14 @@ import s from './ModalWindow.module.css'
 import Button from './../../Common/Button/Button'
 import PageTitle from './../../Common/PageTitle/PageTitle';
 import { NavLink } from 'react-router-dom';
-
-const InputArea = React.forwardRef((props, ref) => {
-    return (
-        <div>
-            <input type="text" ref={ref} {...props} />
-        </div>
-    );
-});
+import InputArea from '../../Common/InputArea/InputArea';
 
 const ModalWindow = (props) => {
     const [fullname, setName] = useState('');
     const [age, setAge] = useState('');
     const [sex, setSex] = useState('');
 
-    let newInputAgeElement = React.useRef(null);
+    let newInputAgeElement = React.createRef();
 
     const handleKeyPress = (e) => {
         const allowedChars = "0123456789";

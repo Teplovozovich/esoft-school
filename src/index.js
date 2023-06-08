@@ -5,8 +5,7 @@ import 'typeface-roboto';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
-import state, { subscribe } from './components/mobX/state';
-import { handleStatusChange, handleAddButtonClick, updateNewInputAgeText } from './components/mobX/state';
+import store from './components/mobX/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,12 +13,16 @@ let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} updateNewInputAgeText={updateNewInputAgeText} handleAddButtonClick={handleAddButtonClick} handleStatusChange={handleStatusChange} />
+        <App state={store.getState()}
+          updateNewInputAgeText={store.updateNewInputAgeText.bind(store)}
+          handleAddButtonClick={store.handleAddButtonClick}
+          handleStatusChange={store.handleStatusChange.bind(store)}
+        />
       </BrowserRouter>
     </React.StrictMode>
   );
 }
 
-rerenderEntireTree(state)
+rerenderEntireTree(store.getState)
 
-subscribe(rerenderEntireTree)
+store.subscribe(rerenderEntireTree)
