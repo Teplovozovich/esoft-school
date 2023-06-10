@@ -13,16 +13,14 @@ let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.getState()}
-          updateNewInputAgeText={store.updateNewInputAgeText.bind(store)}
-          handleAddButtonClick={store.handleAddButtonClick}
-          handleStatusChange={store.handleStatusChange.bind(store)}
+        <App state={state}
+          dispatch={store.dispatch.bind(store)}
         />
       </BrowserRouter>
     </React.StrictMode>
   );
 }
 
-rerenderEntireTree(store.getState)
+rerenderEntireTree(store.getState())
 
 store.subscribe(rerenderEntireTree)

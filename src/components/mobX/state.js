@@ -117,14 +117,20 @@ let store = {
                 { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
                 { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
             ],
-            newInputAge: ''
+            newInputAge: '',
+            newInputFullName: ''
         },
-    },
-    getState() {
-        return this._state
     },
     _callSubscriber() {
     },
+
+    getState() {
+        return this._state
+    },
+    subscribe(observer) {
+        this._state._callSubscriber = observer;
+    },
+
     handleStatusChange(id) {
         this._state.playersListPage.itemsPlayersList = this._state.playersListPage.itemsPlayersList.map(player => {
             if (player.id === id) {
@@ -156,8 +162,38 @@ let store = {
         this._state.playersListPage.itemsPlayersList.push(newPlayer);
         this._state._callSubscriber(this._state);
     },
-    subscribe(observer) {
-        this._state._callSubscriber = observer;
+    dispatch(action) {
+        console.log(this._state);
+        if (action.type === "HANDLE-STATUS-CHANGE") {
+            this._state.playersListPage.itemsPlayersList = this._state.playersListPage.itemsPlayersList.map(player => {
+                if (player.id === action.id) {
+                    if (player.status === "blocked") {
+                        return { ...player, status: "active", isBlocked: "unblocked" };
+                    } else {
+                        return { ...player, status: "blocked", isBlocked: "blocked" };
+                    }
+                }
+                return player;
+            });
+            this._state._callSubscriber(this._state);
+        } else if (action.type === "UPDATE-NEW-INPUT-AGE-TEXT") {
+            this._state.playersListPage.newInputAge = action.newText;
+            this._state.playersListPage.newInputFullName = action.newText;
+            this._state._callSubscriber(this._state);
+        } else if (action.type === "HANDLE-ADD-BUTTON-CLICK") {
+            const newPlayer = {
+                id: this._state.playersListPage.itemsPlayersList.length + 1,
+                name: this._state.playersListPage.newInputFullName,
+                age: this._state.playersListPage.newInputAge,
+                sex: "a",
+                created: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
+                changed: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
+                status: "active",
+                isBlocked: "blocked"
+            };
+            this._state.playersListPage.itemsPlayersList.push(newPlayer);
+            this._state._callSubscriber(this._state);
+        }
     }
 }
 

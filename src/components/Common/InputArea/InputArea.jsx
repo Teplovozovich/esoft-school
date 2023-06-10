@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './InputArea.module.css';
 
-const InputArea = (props) => {
+const InputArea = React.forwardRef((props, ref) => {
     return (
         <div className={s.divArea}>
             <input
@@ -11,9 +11,10 @@ const InputArea = (props) => {
                 onChange={props.onChange}
                 value={props.value}
                 type={props.type}
+                ref={ref} // передаем полученный объект Ref напрямую
             ></input>
         </div>
     );
-};
+});
 
 export default InputArea;

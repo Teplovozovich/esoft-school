@@ -6,11 +6,10 @@ import { NavLink } from 'react-router-dom';
 import InputArea from '../../Common/InputArea/InputArea';
 
 const ModalWindow = (props) => {
-    const [fullname, setName] = useState('');
-    const [age, setAge] = useState('');
     const [sex, setSex] = useState('');
 
     let newInputAgeElement = React.createRef();
+    let newInputFullNameElement = React.createRef();
 
     const handleKeyPress = (e) => {
         const allowedChars = "0123456789";
@@ -20,14 +19,18 @@ const ModalWindow = (props) => {
         }
     }
 
-    let onInputAgeChange = () => {
-        let text = newInputAgeElement.current.value;
-        props.updateNewInputAgeText(text);
-        console.log(props.newInputAge);
-    }
+    const onInputAgeChange = () => {
+        let newText = newInputAgeElement.current.value;
+        props.dispatch({ type: "UPDATE-NEW-INPUT-AGE-TEXT", newText: newText });
+        console.log(props.dispatch);
+    };
+
+    const onInputFullNameChange = () => {
+        let newText = newInputFullNameElement.current.value;
+        props.dispatch({ type: "UPDATE-NEW-INPUT-AGE-TEXT", newText: newText });
+    };
 
     return (
-
         <div className={s.ModalBackground}>
             <div className={s.WindowModal}>
                 <div className={s.modalWrap}>
@@ -40,7 +43,8 @@ const ModalWindow = (props) => {
                     <div className={s.fio}>ФИО</div>
                     <InputArea
                         placeholder="Иванов Иван Иванович"
-                        onChange={(e) => setName(e.target.value)}
+                        ref={newInputFullNameElement}
+                        onChange={onInputFullNameChange}
                     />
                 </div>
                 <div className={s.modalWrap}>
@@ -48,11 +52,10 @@ const ModalWindow = (props) => {
                         <div className={s.age}>
                             <div className={s.fio}>Возраст</div>
                             <InputArea
-                                ref={newInputAgeElement}
                                 placeholder="0"
+                                ref={newInputAgeElement}
                                 onKeyPress={handleKeyPress}
                                 onChange={onInputAgeChange}
-                                value={props.newInputAge}
                             />
                         </div>
                         <div className={s.sex}>
@@ -65,14 +68,12 @@ const ModalWindow = (props) => {
                                             <img src="../assets/svg/big-girl.svg" alt="boy" />
                                         </div>
                                     </label>
-
                                     <label>
                                         <input type="radio" name="option" value="boy" onChange={(e) => setSex(e.target.value)} />
                                         <div className={s.img}>
                                             <img src="../assets/svg/big-boy.svg" alt="girl" />
                                         </div>
                                     </label>
-
                                 </div>
                             </div>
                         </div>
@@ -81,7 +82,7 @@ const ModalWindow = (props) => {
                 <Button
                     className="primary-button"
                     textButton="Добавить"
-                    onClick={props.handleAddButtonClick}
+                    onClick={() => props.dispatch({ type: "HANDLE-ADD-BUTTON-CLICK" })}
                 />
             </div>
         </div>

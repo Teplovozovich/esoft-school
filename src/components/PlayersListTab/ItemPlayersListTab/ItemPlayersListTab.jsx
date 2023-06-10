@@ -43,7 +43,7 @@ const ItemPlayersListTab = (props) => {
                             <ButtonBlock
                                 className="button"
                                 isBlocked={item.isBlocked}
-                                onClick={() => props.handleStatusChange(item.id)}
+                                onClick={() => props.dispatch({ type: "HANDLE-STATUS-CHANGE", id: item.id })}
                             />
                         </div>
                     </div>

@@ -40,10 +40,8 @@ function App(props) {
           <>
             <Header />
             <PlayersListTab
-              handleAddButtonClick={props.handleAddButtonClick}
               playersListPage={props.state.playersListPage}
-              handleStatusChange={props.handleStatusChange}
-              updateNewInputAgeText={props.updateNewInputAgeText}
+              dispatch={props.dispatch}
             />
           </>} />
       </Routes>
