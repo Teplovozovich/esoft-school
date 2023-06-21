@@ -5,7 +5,7 @@ import 'typeface-roboto';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
-import store from './components/mobX/state';
+import store from './components/Store/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

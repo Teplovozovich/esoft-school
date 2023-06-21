@@ -115,10 +115,18 @@ let store = {
             itemsPlayersList: [
                 { id: 1, name: "Александров Игнат Анатолиевич", age: "24", sex: "girl", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
                 { id: 2, name: "Мартынов Остап Фёдорович", age: "12", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
-                { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" }
+                { id: 3, name: "Комаров Цефас Александрович", age: "83", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+                { id: 4, name: "Кулаков Станислав Петрович", age: "43", sex: "boy", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
+                { id: 5, name: "Борисов Йошка Васильевич", age: "32", sex: "girl", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+                { id: 6, name: "Негода Михаил Эдуардович", age: "33", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+                { id: 7, name: "Жданов Зураб Алексеевич", age: "24", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+                { id: 8, name: "Бобров Фёдор Викторович", age: "19", sex: "boy", blocked: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
+                { id: 9, name: "Александров Игнат Анатолиевич", age: "21", sex: "boy", status: "active", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "unblocked" },
+                { id: 10, name: "Многогрешный Павел Виталиевич", age: "24", sex: "boy", status: "blocked", created: "12 октрября 2021", changed: "22 октрября 2021", isBlocked: "blocked" },
             ],
             newInputAge: '',
-            newInputFullName: ''
+            newInputFullName: '',
+            newRadioSexValue: ''
         },
     },
     _callSubscriber() {
@@ -178,18 +186,23 @@ let store = {
             this._state._callSubscriber(this._state);
         } else if (action.type === "UPDATE-NEW-INPUT-AGE-TEXT") {
             this._state.playersListPage.newInputAge = action.newText;
+            this._state._callSubscriber(this._state);
+        } else if (action.type === "UPDATE-NEW-INPUT-FULL-NAME-TEXT") {
             this._state.playersListPage.newInputFullName = action.newText;
+            this._state._callSubscriber(this._state);
+        } else if (action.type === "UPDATE-NEW-RADIO-SEX-VALUE") {
+            this._state.playersListPage.newRadioSexValue = action.newValue;
             this._state._callSubscriber(this._state);
         } else if (action.type === "HANDLE-ADD-BUTTON-CLICK") {
             const newPlayer = {
                 id: this._state.playersListPage.itemsPlayersList.length + 1,
                 name: this._state.playersListPage.newInputFullName,
                 age: this._state.playersListPage.newInputAge,
-                sex: "a",
+                sex: this._state.playersListPage.newRadioSexValue === "boy" ? "boy" : "girl",
                 created: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
                 changed: new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
                 status: "active",
-                isBlocked: "blocked"
+                isBlocked: "unblocked"
             };
             this._state.playersListPage.itemsPlayersList.push(newPlayer);
             this._state._callSubscriber(this._state);

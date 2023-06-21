@@ -8,8 +8,7 @@ import InputArea from '../../Common/InputArea/InputArea';
 const ModalWindow = (props) => {
     const [sex, setSex] = useState('');
 
-    let newInputAgeElement = React.createRef();
-    let newInputFullNameElement = React.createRef();
+
 
     const handleKeyPress = (e) => {
         const allowedChars = "0123456789";
@@ -19,15 +18,20 @@ const ModalWindow = (props) => {
         }
     }
 
-    const onInputAgeChange = () => {
-        let newText = newInputAgeElement.current.value;
+    const onInputAgeChange = (e) => {
+        let newText = e.target.value;
         props.dispatch({ type: "UPDATE-NEW-INPUT-AGE-TEXT", newText: newText });
-        console.log(props.dispatch);
     };
 
-    const onInputFullNameChange = () => {
-        let newText = newInputFullNameElement.current.value;
-        props.dispatch({ type: "UPDATE-NEW-INPUT-AGE-TEXT", newText: newText });
+    const onInputFullNameChange = (e) => {
+        let newText = e.target.value;
+        props.dispatch({ type: "UPDATE-NEW-INPUT-FULL-NAME-TEXT", newText: newText });
+    };
+
+    const onRadioSexChange = (e) => {
+        setSex(e.target.value)
+        let newValue = e.target.value;
+        props.dispatch({ type: "UPDATE-NEW-RADIO-SEX-VALUE", newValue: newValue });
     };
 
     return (
@@ -43,7 +47,6 @@ const ModalWindow = (props) => {
                     <div className={s.fio}>ФИО</div>
                     <InputArea
                         placeholder="Иванов Иван Иванович"
-                        ref={newInputFullNameElement}
                         onChange={onInputFullNameChange}
                     />
                 </div>
@@ -53,7 +56,6 @@ const ModalWindow = (props) => {
                             <div className={s.fio}>Возраст</div>
                             <InputArea
                                 placeholder="0"
-                                ref={newInputAgeElement}
                                 onKeyPress={handleKeyPress}
                                 onChange={onInputAgeChange}
                             />
@@ -63,13 +65,25 @@ const ModalWindow = (props) => {
                                 <div className={s.fio}>Пол</div>
                                 <div className={s.people}>
                                     <label>
-                                        <input type="radio" name="option" value="girl" onChange={(e) => setSex(e.target.value)} />
+                                        <input
+                                            type="radio"
+                                            name="option"
+                                            value="girl"
+                                            checked={sex === "girl"}
+                                            onChange={onRadioSexChange}
+                                        />
                                         <div className={s.img}>
                                             <img src="../assets/svg/big-girl.svg" alt="boy" />
                                         </div>
                                     </label>
                                     <label>
-                                        <input type="radio" name="option" value="boy" onChange={(e) => setSex(e.target.value)} />
+                                        <input
+                                            type="radio"
+                                            name="option"
+                                            value="boy"
+                                            checked={sex === "boy"}
+                                            onChange={onRadioSexChange}
+                                        />
                                         <div className={s.img}>
                                             <img src="../assets/svg/big-boy.svg" alt="girl" />
                                         </div>

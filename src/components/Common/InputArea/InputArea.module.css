@@ -11,10 +11,7 @@ input {
     padding: 12px 20px;
     gap: 8px;
 
-    /* Gray / White */
-
     background: #FFFFFF;
-    /* Gray / 100 */
 
     border: 1px solid #DCDCDF;
     border-radius: 12px;
@@ -39,6 +36,8 @@ input:focus {
 
 .divArea {
     height: 48px;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .wrongInputDates{

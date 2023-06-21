@@ -1,5 +1,6 @@
 import React from 'react'
 import './Chat.css'
+import InputArea from '../../Common/InputArea/InputArea';
 
 const Chat = (props) => {
     return (
@@ -35,7 +36,7 @@ const Chat = (props) => {
                 </div>
             </div>
             <div className="msg-interactive-elements">
-                <textarea placeholder="Сообщение..."></textarea>
+                <InputArea placeholder="Сообщение..." />
                 <button><img src="../assets/svg/send-btn.svg"></img></button>
             </div>
         </div>

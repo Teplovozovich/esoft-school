@@ -89,6 +89,7 @@ const Game = (props) => {
     let modalWindow = null;
     let gameStep = null;
 
+
     if (winner) {
         let textPageTitle = '';
         if (winner === 'X') {
