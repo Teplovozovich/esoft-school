@@ -37,7 +37,7 @@ const Chat = (props) => {
             </div>
             <div className="msg-interactive-elements">
                 <InputArea placeholder="Сообщение..." />
-                <button><img src="../assets/svg/send-btn.svg"></img></button>
+                <button><img src="./assets/svg/send-btn.svg"></img></button>
             </div>
         </div>
 

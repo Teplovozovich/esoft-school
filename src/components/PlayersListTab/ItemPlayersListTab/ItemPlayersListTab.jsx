@@ -23,7 +23,7 @@ const ItemPlayersListTab = (props) => {
                             </div>
                             <div className={s.thirdCell}>
                                 <div className={s.rowCell}>
-                                    <img src={item.sex === "boy" ? "../assets/svg/boy.svg" : "../assets/svg/girl.svg"} alt="girl" />
+                                    <img src={item.sex === "boy" ? "./assets/svg/boy.svg" : "./assets/svg/girl.svg"} alt="girl" />
                                 </div>
                             </div>
                             <div className={s.fourthCell}>

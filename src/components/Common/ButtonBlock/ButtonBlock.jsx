@@ -8,7 +8,7 @@ const ButtonBlock = (props) => {
             <button className={`${s[props.className]} ${s[props.status]}`} onClick={props.onClick}>
                 {props.isBlocked === 'unblocked' ? (
                     <>
-                        <img src="../assets/svg/vector.svg" alt="Block Icon" />
+                        <img src="./assets/svg/vector.svg" alt="Block Icon" />
                         <p className={s.labelInButton}>Заблокировать</p>
                     </>
                 ) : (

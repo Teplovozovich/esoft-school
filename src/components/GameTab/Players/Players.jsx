@@ -9,8 +9,8 @@ const Players = (props) => {
             <div id="subject-list">
                 <PageTitle textPageTitle="Игроки" />
                 <div className="container">
-                    <PlayersItems name="Пупкин Владелен Игоревич" winsPersent="63% побед" src="../assets/svg/zero.svg" />
-                    <PlayersItems name="Плюшкина Екатерина Викторовна" winsPersent="23% побед" src="../assets/svg/x.svg" />
+                    <PlayersItems name="Пупкин Владелен Игоревич" winsPersent="63% побед" src="./assets/svg/zero.svg" />
+                    <PlayersItems name="Плюшкина Екатерина Викторовна" winsPersent="23% побед" src="./assets/svg/x.svg" />
                 </div>
             </div>
         </div>

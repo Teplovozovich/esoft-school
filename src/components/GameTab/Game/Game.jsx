@@ -93,7 +93,7 @@ const Game = (props) => {
     if (winner) {
         let textPageTitle = '';
         if (winner === 'X') {
-            textPageTitle = `${playerO.name} ${playerO.surname} победил!`;
+            textPageTitle = `${playerO.name} ${playerO.surname} Победил!`;
         } else if (winner === 'O') {
             textPageTitle = `${playerX.name} ${playerX.surname} Победила!`;
         } else {
@@ -109,14 +109,7 @@ const Game = (props) => {
 
         gameStep = (
             <div id="game-step">
-                <p>Ходит</p>
-                &nbsp;
-                <img
-                    id="imgCurrentPlayer"
-                    src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'}
-                />
-                &nbsp;
-                <p>{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
+                <p className="currentPlayerInfoLabel">Игра окончена</p>
             </div>
         );
     } else {
@@ -126,7 +119,7 @@ const Game = (props) => {
                 &nbsp;
                 <img
                     id="imgCurrentPlayer"
-                    src={turn === 'X' ? '../assets/svg/x.svg' : '../assets/svg/zero.svg'}
+                    src={turn === 'X' ? './assets/svg/zero.svg' : './assets/svg/x.svg'}
                 />
                 &nbsp;
                 <p className="currentPlayerInfoLabel">{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
@@ -149,9 +142,9 @@ const Game = (props) => {
                             id={`theImg${index + 1}`}
                             src={
                                 cell === 'X'
-                                    ? '../assets/svg/xxl-x.svg'
+                                    ? './assets/svg/xxl-x.svg'
                                     : cell === 'O'
-                                        ? '../assets/svg/xxl-zero.svg'
+                                        ? './assets/svg/xxl-zero.svg'
                                         : ''
                             }
                         />

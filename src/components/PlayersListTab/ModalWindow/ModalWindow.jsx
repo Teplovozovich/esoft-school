@@ -39,7 +39,7 @@ const ModalWindow = (props) => {
             <div className={s.WindowModal}>
                 <div className={s.modalWrap}>
                     <div onClick={props.secondButtonClickHandler} className={s.cross} >
-                        <img className={s.crossImg} src="../assets/svg/modal-cross.svg" />
+                        <img className={s.crossImg} src="./assets/svg/modal-cross.svg" />
                     </div>
                 </div>
                 <PageTitle textPageTitle={props.textPageTitle} />
@@ -73,7 +73,7 @@ const ModalWindow = (props) => {
                                             onChange={onRadioSexChange}
                                         />
                                         <div className={s.img}>
-                                            <img src="../assets/svg/big-girl.svg" alt="boy" />
+                                            <img src="./assets/svg/big-girl.svg" alt="boy" />
                                         </div>
                                     </label>
                                     <label>
@@ -85,7 +85,7 @@ const ModalWindow = (props) => {
                                             onChange={onRadioSexChange}
                                         />
                                         <div className={s.img}>
-                                            <img src="../assets/svg/big-boy.svg" alt="girl" />
+                                            <img src="./assets/svg/big-boy.svg" alt="girl" />
                                         </div>
                                     </label>
                                 </div>

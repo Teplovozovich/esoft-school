@@ -37,7 +37,7 @@ const AuthorizationPage = (props) => {
     return (
         <div className={s.mainContainer}>
             <div className={s.form}>
-                <div><img className={s.dog} src="../assets/svg/dog.svg" /></div>
+                <div><img className={s.dog} src='./assets/svg/dog.svg' /></div>
                 <div className={s.title}>
                     <PageTitle textPageTitle="Войти в игру" />
                 </div>
@@ -62,8 +62,6 @@ const AuthorizationPage = (props) => {
                     />
                     {isPasswordWrong && <p className={s.error}>Неверный пароль</p>}
                 </div>
-
-
                 <div className={s.thirdInput}>
                     <Button className={buttonClass} textButton="Войти" onClick={handleLogin} />
                 </div>
