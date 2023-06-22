@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/esoft-school/static/css/main.6bdf1488.css",
-    "main.js": "/esoft-school/static/js/main.e2ff1a7c.js",
+    "main.js": "/esoft-school/static/js/main.4732f5e8.js",
     "static/media/dog.svg": "/esoft-school/static/media/dog.2c38381cca8d516a4867.svg",
     "static/media/roboto-latin-900italic.woff": "/esoft-school/static/media/roboto-latin-900italic.c20d916c1a1b094c1cec.woff",
     "static/media/roboto-latin-300italic.woff": "/esoft-school/static/media/roboto-latin-300italic.bd5b7a13f2c52b531a2a.woff",
@@ -32,10 +32,10 @@
     "static/media/signout-icon-hover.svg": "/esoft-school/static/media/signout-icon-hover.e40f56cfcd165f2735a4.svg",
     "index.html": "/esoft-school/index.html",
     "main.6bdf1488.css.map": "/esoft-school/static/css/main.6bdf1488.css.map",
-    "main.e2ff1a7c.js.map": "/esoft-school/static/js/main.e2ff1a7c.js.map"
+    "main.4732f5e8.js.map": "/esoft-school/static/js/main.4732f5e8.js.map"
   },
   "entrypoints": [
     "static/css/main.6bdf1488.css",
-    "static/js/main.e2ff1a7c.js"
+    "static/js/main.4732f5e8.js"
   ]
 }
