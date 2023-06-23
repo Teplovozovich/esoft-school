@@ -105,9 +105,7 @@ const Game = (props) => {
         modalWindow = (
             <ModalWindow onClick={handleResetBoard} textPageTitle={textPageTitle} />
         );
-    }
-
-    if (winner === null && board.includes('')) {
+    } else if (winner === null && board.includes('')) {
         gameStep = (
             <div id="game-step">
                 <p className="currentPlayerInfoLabel">Ходит</p>
