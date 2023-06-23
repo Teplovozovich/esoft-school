@@ -9,7 +9,6 @@ const Game = (props) => {
     const [turn, setTurn] = useState('X');
     const [board, setBoard] = useState(Array(9).fill(''));
     const [winner, setWinner] = useState(null);
-    const [showModal, setShowModal] = useState(false);
     const [playerX, setPlayerX] = useState({
         name: 'Плюшкина',
         surname: 'Екатерина'
@@ -38,6 +37,8 @@ const Game = (props) => {
         newBoard[index] = turn;
         setBoard(newBoard);
         setTurn(turn === 'X' ? 'O' : 'X');
+
+
     }
 
     function checkWinner() {
@@ -57,18 +58,15 @@ const Game = (props) => {
 
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 setWinner(board[a]);
-                setShowModal(true);
                 return;
             }
         }
 
         if (!board.includes('')) {
             setWinner('Ничья');
-            setShowModal(true);
             return;
         }
     }
-
 
     function handleResetBoard() {
         setTurn(winner === 'X' ? 'O' : 'X'); // Start with the opposite player if there is a winner
@@ -89,40 +87,37 @@ const Game = (props) => {
     let modalWindow = null;
     let gameStep = null;
 
-
-    if (winner) {
+    if (winner !== null) {
         let textPageTitle = '';
         if (winner === 'X') {
-            textPageTitle = `${playerO.name} ${playerO.surname} Победил!`;
-        } else if (winner === 'O') {
             textPageTitle = `${playerX.name} ${playerX.surname} Победила!`;
+        } else if (winner === 'O') {
+            textPageTitle = `${playerO.name} ${playerO.surname} Победил!`;
         } else {
             textPageTitle = `Ничья!`;
         }
-
-        function secondButtonClickHandler() {
-            console.log('aboba');
-        }
-        modalWindow = (
-            <ModalWindow secondButtonClickHandler={secondButtonClickHandler} onClick={handleResetBoard} textPageTitle={textPageTitle} />
-        );
-
         gameStep = (
             <div id="game-step">
                 <p className="currentPlayerInfoLabel">Игра окончена</p>
             </div>
         );
-    } else {
+
+        modalWindow = (
+            <ModalWindow onClick={handleResetBoard} textPageTitle={textPageTitle} />
+        );
+    }
+
+    if (winner === null && board.includes('')) {
         gameStep = (
             <div id="game-step">
                 <p className="currentPlayerInfoLabel">Ходит</p>
                 &nbsp;
                 <img
                     id="imgCurrentPlayer"
-                    src={turn === 'X' ? './assets/svg/zero.svg' : './assets/svg/x.svg'}
+                    src={turn === 'X' ? './assets/svg/x.svg' : './assets/svg/zero.svg'}
                 />
                 &nbsp;
-                <p className="currentPlayerInfoLabel">{turn === 'X' ? `${playerO.name} ${playerO.surname}` : `${playerX.name} ${playerX.surname}`}</p>
+                <p className="currentPlayerInfoLabel">{turn === 'X' ? `${playerX.name} ${playerX.surname}` : `${playerO.name} ${playerO.surname}`}</p>
             </div>
         );
     }
@@ -151,8 +146,8 @@ const Game = (props) => {
                     </div>
                 ))}
             </div>
-            {modalWindow}
             {gameStep}
+            {modalWindow}
         </div>
     );
 };
