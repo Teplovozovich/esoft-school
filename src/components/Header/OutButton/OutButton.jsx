@@ -1,10 +1,11 @@
 import React from 'react'
 import './OutButton.css'
+import { NavLink } from 'react-router-dom'
 
 const OutButton = (props) => {
     return (
         <div id="signOutButton">
-            <img />
+            <NavLink to="/"><img src='./assets/svg/signout-icon.svg' /></NavLink>
         </div>
 
     )

@@ -26,11 +26,11 @@ const AuthorizationPage = (props) => {
     }
 
     const handleLogin = () => {
-        if (loginText === 'aboba' && passwordText === 'aboba') {
+        if (loginText === 'admin' && passwordText === 'admin123') {
             navigate('/ActivePlayersTab');
         } else {
-            setIsLoginWrong(loginText !== 'aboba');
-            setIsPasswordWrong(passwordText !== 'aboba');
+            setIsLoginWrong(loginText !== 'admin');
+            setIsPasswordWrong(passwordText !== 'admin123');
         }
     };
 
